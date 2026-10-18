@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "Cite this software and the upstream references when using this study."
+title: "UAV Vision: Resolution, Slicing and Evaluation Sensitivity"
+authors:
+  - family-names: Ismail
+    given-names: Ziad
+version: "0.3.0-review"
+license: AGPL-3.0-only
+type: software

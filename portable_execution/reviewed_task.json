@@ -1,0 +1,97 @@
+{
+  "schema": "uvd1-portable-reviewed-task-v1",
+  "scope": "visdrone-uvd1-reviewed",
+  "protocol": "UVD-1",
+  "class_names": [
+    "pedestrian",
+    "people",
+    "bicycle",
+    "car",
+    "van",
+    "truck",
+    "tricycle",
+    "awning-tricycle",
+    "bus",
+    "motor"
+  ],
+  "policy": "score=1 classes 1..10 -> 0..9; known three exact zero-height exceptions; clip valid scored boxes if required; remove float32 duplicate labels; all exclusions retained; original files untouched",
+  "limitations": [
+    "ignored pixels remain in loss and built-in metric",
+    "not native VisDrone evaluation",
+    "validation is exposed development; test-dev untouched",
+    "byte duplicate audit is not scene-independence verification"
+  ],
+  "expected_exceptions": [
+    {
+      "split": "train",
+      "file": "0000293_03401_d_0000939.txt",
+      "line": 130,
+      "raw": "1008,374,3,0,0,0,0,0",
+      "reason": "known_zero_height_original"
+    },
+    {
+      "split": "train",
+      "file": "9999985_00000_d_0000020.txt",
+      "line": 12,
+      "raw": "611,158,4,0,1,4,0,0",
+      "reason": "known_zero_height_original"
+    },
+    {
+      "split": "train",
+      "file": "9999999_00590_d_0000267.txt",
+      "line": 89,
+      "raw": "545,414,10,0,0,0,0,0",
+      "reason": "known_zero_height_original"
+    }
+  ],
+  "expected_source_manifest_sha256": "002a79c23c9bb468a805e8cb4d604339cc56626aa8d44a55d8b045123256d136",
+  "expected_semantic_identity_sha256": "9209eee7a76b29cb183315cd2a54da06a07dd927bd3f2f7bc46dc9c2180d21b3",
+  "splits": {
+    "train": {
+      "counts": {
+        "images": 6471,
+        "targets": 343200,
+        "excluded": 10343,
+        "known_exceptions": 3,
+        "duplicates": 4,
+        "clipped": 0
+      },
+      "class_counts": {
+        "3": 144865,
+        "1": 27059,
+        "4": 24956,
+        "5": 12875,
+        "9": 29646,
+        "2": 10480,
+        "6": 4812,
+        "7": 3246,
+        "0": 79335,
+        "8": 5926
+      }
+    },
+    "val": {
+      "counts": {
+        "images": 548,
+        "targets": 38759,
+        "excluded": 1410,
+        "known_exceptions": 0,
+        "duplicates": 0,
+        "clipped": 0
+      },
+      "class_counts": {
+        "3": 14064,
+        "9": 4886,
+        "1": 5125,
+        "0": 8844,
+        "7": 532,
+        "6": 1045,
+        "2": 1287,
+        "5": 750,
+        "4": 1975,
+        "8": 251
+      }
+    }
+  },
+  "semantic_schema": "converted-task-semantic-identity-prototype-v1",
+  "trust_note": "Expected identities define the reviewed task; changing this configuration changes the trusted task. No original generated manifest is required at runtime."
+}

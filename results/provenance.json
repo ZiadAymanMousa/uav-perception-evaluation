@@ -1,0 +1,62 @@
+{
+  "schema_version": "0.2.0",
+  "scope": "Hashes identify the retained source evidence; files with these hashes are not all bundled. Aggregates alone cannot reproduce raw inference/scoring.",
+  "dataset_manifest_sha256": "c8d0d238c540718fd52550dee855f118c254f65b6d5f196691025d5e00954f40",
+  "inference_config_sha256": "06ed85dd621ee0e037e90efcae2dd6c290c182870a85562e45f5b74e73398ede",
+  "trained_models": [
+    {
+      "seed": 0,
+      "training_run_id": "b001_uvd1_yolo11n640_seed0",
+      "inference_run_id": "d001_uvd1_sharedweights_inference_20261016",
+      "selected_epoch": 95,
+      "selected_weights_sha256": "4d6eda28e25673f6175fb9ca32ad329d2469965b263cb4068492c25a69fa98f3",
+      "prediction_log_sha256": "a1b7b743f769ac2609c7c4cf936ca52a44be26cd1a8990457801e535083dbfdd",
+      "inference_record_sha256": "5ce732a8a52291f0c91cb8588a258833935417ccc305ea05d0b7c12f23b6e839",
+      "scoring_summary_sha256": "3339bde7604a3d801bf4522c7bb3d4f6be34ca3f4fdc7cf6b399dff1fd751457",
+      "development_analysis_sha256": "b48708a45de39975e953bae8190e79dca4a1f3795e93efd09a4c295921317105"
+    },
+    {
+      "seed": 1,
+      "training_run_id": "b004_uvd1_yolo11n640_seed1_fresh",
+      "inference_run_id": "d004_uvd1_seed1_fresh_inference_20261017",
+      "selected_epoch": 103,
+      "selected_weights_sha256": "99a6f2263087473a48147437f2f57c8f9c0c934f89744d77e99061ba02c88c27",
+      "prediction_log_sha256": "0b616c9458d3b64aa1c89dde3a55e0addca1b6a5d065d0cf5163637e1be94bbc",
+      "inference_record_sha256": "f854fd5f1dce05a6979f6594610b827511079d882f9953cbb8403232ef11f602",
+      "scoring_summary_sha256": "05e3cc332b29bb4de5b6b575d165155a863da917e9099852afb76db2284e0ded",
+      "development_analysis_sha256": "4fbd94a138b176a9653906d128aa75c6346f84a16e346b2dc6b4f635550e4143"
+    },
+    {
+      "seed": 2,
+      "training_run_id": "b003_uvd1_yolo11n640_seed2",
+      "inference_run_id": "d005_uvd1_seed2_inference_20261017",
+      "selected_epoch": 114,
+      "selected_weights_sha256": "15636cb841282eac605e8b2b97c469eed86b932717098abea2c6f8d4acddde3b",
+      "prediction_log_sha256": "94d8dacb47286cd44b8f6648f6b311ec05b02804a5f812aec8584c2b6f4eaf46",
+      "inference_record_sha256": "28b187a9ba9e41820f4433d5c5b2ad59eb796dc3d459d30bd97dec0f7f30407a",
+      "scoring_summary_sha256": "40a8ca72dc6ab627fc791b71b544e71dc07c38da6ba2bb7b5f512fe46b1f7420",
+      "development_analysis_sha256": "6a38050317eed88ad8101aa1e9d0f0c2ce84ec4304893f7010f9014bcbccc916"
+    }
+  ],
+  "source_aggregate_hashes": {
+    "three_seed_synthesis": "1ca3baa5c915c78e9293423755efb96a8297de88d82647226f94ffbf7a9b48b1",
+    "current_matcher_control": "bbad11789f28acc4ff59ca11bd8b81a64e7af20080df51fa4e91e9577b348a57",
+    "current_control_frozen_inventory": "a01900914ddcb57833e0457a84dc9b6987e8d173045a1402665176bc04084ef1",
+    "seed0_size_aggregate": "ee877df98bb8d223e441bea21bd90b1b9a72936fc3804b1159321888efd7280e"
+  },
+  "upstream_control_sources": {
+    "matching_commit": "abc2066dd6bd87f6806f73a170cf8f764ca2ebbe",
+    "matching_validator_git_blob_sha1": "9ae6fded948119f723186ca4551d73aac795cc17",
+    "matching_extracted_function_sha256": "596bb491cee2fe8dd2bb46fbcef4f71afc4fde73e74aaa72ee9ddd57ff69bcaa",
+    "published_ap_full_source_git_blob_sha1": "2c790f77b0ee6b177332ac092a3cc70bd54d1352",
+    "published_ap_extracted_function_sha256": "c2ba46c69ed90f5601a40c0908a9f8c47d0cc7bebe86b4257bc7f64ef685e7ac"
+  },
+  "protocol_input_summary_sha256": {
+    "p001_d001_protocol_sensitivity_20261016": "c62ac016bd78d1c1590a15dcd7d2cfe5fbce6008a532b5908c766ef4a85a3659",
+    "p003_d001_published_ap_boundary_20261016": "aab593fecf2158fbe4148cee1b2fde2e98c3941e983282f31b1afffc0ace3fa4",
+    "p004_d004_protocol_sensitivity_20261017": "887f8b5955faeecfd971132cb784fc80b8208fee8c57a46eb309c58b64f2ad12",
+    "p005_d004_published_ap_boundary_20261017": "00328bea2719d88436c68e36e44fdc78cd969d6fe473a3a8be11f5b4e03faa3a",
+    "p006_d005_protocol_sensitivity_20261017": "cfb30f9d0721348c057b4952dc77b03ea01caaf959099bbeeea4be4ea035e98d",
+    "p007_d005_published_ap_boundary_20261017": "54a5dd200bb80cd5ef5f1ce39ec665b071feb3e77a6cd9e30bcc11fffd43bef1"
+  }
+}

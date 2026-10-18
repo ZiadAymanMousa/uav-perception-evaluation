@@ -1,0 +1,5 @@
+# Observed Windows CUDA build; clean installation has NOT been verified.
+--extra-index-url https://download.pytorch.org/whl/cu128
+torch==2.10.0+cu128
+torchvision==0.25.0+cu128
+-r requirements-cpu-observed.txt

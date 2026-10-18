@@ -1,0 +1,127 @@
+{
+  "registration_utc": "2026-10-18T01:59:04.454875+00:00",
+  "question": "How reliably does pooled subset AP recover the full-pool configuration choice, and what is selection regret?",
+  "design": "Retrospective finite exposed-pool uniform-without-replacement diagnostic; not confirmatory generalisation",
+  "primary_seed": "seed0",
+  "replication_seeds": [
+    "seed1",
+    "seed2"
+  ],
+  "full_grid": {
+    "permutations": 100,
+    "budgets": [
+      16,
+      32,
+      64,
+      128,
+      256,
+      548
+    ]
+  },
+  "pilot_only": {
+    "seed": "seed0",
+    "replicates": [
+      0,
+      1
+    ],
+    "budgets": [
+      16,
+      64,
+      548
+    ]
+  },
+  "method_order_and_exact_tie_break": [
+    "full_640",
+    "full_960",
+    "full_1280",
+    "fixed_slices_640_plus_global"
+  ],
+  "metric": "Pinned Ultralytics 8.3.253 converted ten-class AP50-95 percent, cap1000; same saved boxes",
+  "class_policy": "All ten classes must have at least one queried GT; otherwise abstain, no zero imputation or reduced denominator",
+  "pool_order": "Canonical original source order within every queried subset; random query order does not reorder score ties",
+  "oracle_boundary": "Selector receives revealed subset statistics only; full-pool scores only evaluate selections",
+  "comparators": [
+    "each fixed configuration",
+    "uniform random configuration selection"
+  ],
+  "fixed1280_caveat": "Development-informed by previous full-pool results; zero regret is not label-free independent discovery",
+  "outcomes": [
+    "winner frequency",
+    "mean/median/p90 AP regret",
+    "abstention",
+    "class coverage",
+    "queried GT box count",
+    "CPU scoring time"
+  ],
+  "tolerance_or_failure_guarantee": null,
+  "stop_rule": "Reviewed bounded pilot completed before unchanged full grid. No learned method, epsilon search, extra candidates or budget expansion.",
+  "compute": "CPU-only; no model loading/inference/GPU, installs or paid compute",
+  "sources": {
+    "seed0": {
+      "run": "d001_uvd1_sharedweights_inference_20261016",
+      "record_sha256": "5ce732a8a52291f0c91cb8588a258833935417ccc305ea05d0b7c12f23b6e839",
+      "predictions_sha256": "a1b7b743f769ac2609c7c4cf936ca52a44be26cd1a8990457801e535083dbfdd",
+      "summary_sha256": "3339bde7604a3d801bf4522c7bb3d4f6be34ca3f4fdc7cf6b399dff1fd751457",
+      "weights_sha256": "4d6eda28e25673f6175fb9ca32ad329d2469965b263cb4068492c25a69fa98f3",
+      "manifest_sha256": "c8d0d238c540718fd52550dee855f118c254f65b6d5f196691025d5e00954f40",
+      "config_sha256": "06ed85dd621ee0e037e90efcae2dd6c290c182870a85562e45f5b74e73398ede",
+      "framework_source_hashes": {
+        "metrics": "4a9c8c1a7b91c309a8ac9a92754b0342ab95a469a07e3d57dcf3438b0fd96563",
+        "matching": "daba9d56de2107daee309abe2fb3db682345c2e1114bb6477554a0f7544cdf09",
+        "predictor": "49cb7e5309037b9e19995b53625d3e7ca831ff404e94f054b2be0da1d15df9e5",
+        "nms": "cefd6b3b3305e9653c29d938d55ccd7f51f510cb7fbd91dc6c315b8379a7376a",
+        "detection_validator": "f944eb546dc7b6eac71c063be8151e80edace5df57abf744ba679b2e23644957"
+      }
+    },
+    "seed1": {
+      "run": "d004_uvd1_seed1_fresh_inference_20261017",
+      "record_sha256": "f854fd5f1dce05a6979f6594610b827511079d882f9953cbb8403232ef11f602",
+      "predictions_sha256": "0b616c9458d3b64aa1c89dde3a55e0addca1b6a5d065d0cf5163637e1be94bbc",
+      "summary_sha256": "05e3cc332b29bb4de5b6b575d165155a863da917e9099852afb76db2284e0ded",
+      "weights_sha256": "99a6f2263087473a48147437f2f57c8f9c0c934f89744d77e99061ba02c88c27",
+      "manifest_sha256": "c8d0d238c540718fd52550dee855f118c254f65b6d5f196691025d5e00954f40",
+      "config_sha256": "06ed85dd621ee0e037e90efcae2dd6c290c182870a85562e45f5b74e73398ede",
+      "framework_source_hashes": {
+        "metrics": "4a9c8c1a7b91c309a8ac9a92754b0342ab95a469a07e3d57dcf3438b0fd96563",
+        "matching": "daba9d56de2107daee309abe2fb3db682345c2e1114bb6477554a0f7544cdf09",
+        "predictor": "49cb7e5309037b9e19995b53625d3e7ca831ff404e94f054b2be0da1d15df9e5",
+        "nms": "cefd6b3b3305e9653c29d938d55ccd7f51f510cb7fbd91dc6c315b8379a7376a",
+        "detection_validator": "f944eb546dc7b6eac71c063be8151e80edace5df57abf744ba679b2e23644957"
+      }
+    },
+    "seed2": {
+      "run": "d005_uvd1_seed2_inference_20261017",
+      "record_sha256": "28b187a9ba9e41820f4433d5c5b2ad59eb796dc3d459d30bd97dec0f7f30407a",
+      "predictions_sha256": "94d8dacb47286cd44b8f6648f6b311ec05b02804a5f812aec8584c2b6f4eaf46",
+      "summary_sha256": "40a8ca72dc6ab627fc791b71b544e71dc07c38da6ba2bb7b5f512fe46b1f7420",
+      "weights_sha256": "15636cb841282eac605e8b2b97c469eed86b932717098abea2c6f8d4acddde3b",
+      "manifest_sha256": "c8d0d238c540718fd52550dee855f118c254f65b6d5f196691025d5e00954f40",
+      "config_sha256": "06ed85dd621ee0e037e90efcae2dd6c290c182870a85562e45f5b74e73398ede",
+      "framework_source_hashes": {
+        "metrics": "4a9c8c1a7b91c309a8ac9a92754b0342ab95a469a07e3d57dcf3438b0fd96563",
+        "matching": "daba9d56de2107daee309abe2fb3db682345c2e1114bb6477554a0f7544cdf09",
+        "predictor": "49cb7e5309037b9e19995b53625d3e7ca831ff404e94f054b2be0da1d15df9e5",
+        "nms": "cefd6b3b3305e9653c29d938d55ccd7f51f510cb7fbd91dc6c315b8379a7376a",
+        "detection_validator": "f944eb546dc7b6eac71c063be8151e80edace5df57abf744ba679b2e23644957"
+      }
+    }
+  },
+  "helper_hashes": {
+    "score_converted_predictions.py": "112e149c6e4ce4055dfb48e95a506b6ffa136a3e39d909d6f6a903a408759646",
+    "inference_geometry.py": "d033d9af2507f08aaa8a92d8b8f0bb214fa2a98f8302c63d2b982c62835652a4"
+  },
+  "query_permutations_sha256": "6fc4bb4512c5867c26f8610b4b2a7eee4ca0e4013ca1ca4c6c61f0698c366f00",
+  "dataset_manifest_sha256": "c8d0d238c540718fd52550dee855f118c254f65b6d5f196691025d5e00954f40",
+  "audit_sha256": "1b5b9e49cc059d992b6357252b330cb1dbee20bd89aa25d4521ced4c1578ea24",
+  "limits": [
+    "All548 labels already exposed/checkpoints selected on them",
+    "Subsample pooled AP is a plug-in selector, not a design-unbiased AP estimator",
+    "Finite-pool acquisition randomness does not establish new-scene performance",
+    "No independent practical AP tolerance or deployment budget justified",
+    "GT box count is not measured annotation time; no real annotation saving",
+    "Three checkpoints are not300 independently trained models",
+    "Software information boundary is architectural, not a hostile-code security sandbox"
+  ],
+  "public_projection_note": "Public projection of the internally frozen protocol; operational provenance omitted. Not an external preregistration. Original registered bytes identified by SHA256 below.",
+  "original_registration_sha256": "c494fa333f3f136a69c1f93011e7449c9c44dcf788c700a999cad2468383a0d1"
+}

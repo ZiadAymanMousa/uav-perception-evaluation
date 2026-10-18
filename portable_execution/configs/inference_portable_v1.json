@@ -1,0 +1,45 @@
+{
+  "protocol": "UVD-1 portable execution v1; preserved inference policy",
+  "expected_ultralytics": "8.3.253",
+  "expected_validation_images": 548,
+  "candidate_policy": "single highest-scoring class per proposal (DetectionPredictor multi_label=False); differs from multi-label training validation",
+  "selection": "all official validation images as exposed development",
+  "confidence": 0.001,
+  "detector_nms_iou": 0.7,
+  "merge_nms_iou": 0.7,
+  "max_detections": 1000,
+  "precision": "FP32",
+  "batch": 1,
+  "rectangular_padding": false,
+  "warmup_per_input_size": 5,
+  "method_order": "rotate by image index",
+  "methods": [
+    {
+      "name": "full_640",
+      "kind": "full",
+      "input_size": 640
+    },
+    {
+      "name": "full_960",
+      "kind": "full",
+      "input_size": 960
+    },
+    {
+      "name": "full_1280",
+      "kind": "full",
+      "input_size": 1280
+    },
+    {
+      "name": "fixed_slices_640_plus_global",
+      "kind": "fixed",
+      "input_size": 640,
+      "tile_size": 640,
+      "overlap": 0.2,
+      "global_pass": true
+    }
+  ],
+  "interpretation": "Established full-frame/fixed slicing controls; not exact SAHI-author reproduction or a novel algorithm",
+  "timing_boundary": "JPEG read/decode through CPU output predictions; includes view construction, model preprocessing/inference/postprocessing, device transfers and CPU tile merge; artifact writing and metric calculation excluded",
+  "timing_limits": "Cached filesystem and desktop hardware; one inference per image/method is a first sweep, not a repeated stable latency benchmark",
+  "expected_semantic_identity_sha256": "9209eee7a76b29cb183315cd2a54da06a07dd927bd3f2f7bc46dc9c2180d21b3"
+}

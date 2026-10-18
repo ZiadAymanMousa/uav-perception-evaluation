@@ -1,0 +1,1211 @@
+{
+  "design": "Retrospective finite exposed-pool uniform image subsampling; unchanged predictions/checkpoints",
+  "pool_images": 548,
+  "query_permutations": 100,
+  "budgets": [
+    16,
+    32,
+    64,
+    128,
+    256,
+    548
+  ],
+  "method_order": [
+    "full_640",
+    "full_960",
+    "full_1280",
+    "fixed_slices_640_plus_global"
+  ],
+  "metric": "Pinned Ultralytics 8.3.253 converted ten-class AP50-95 percent, cap1000; same saved boxes",
+  "class_policy": "All ten classes must have at least one queried GT; otherwise abstain, no zero imputation or reduced denominator",
+  "scoring_cpu": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+  "scoring_torch_threads": 1,
+  "results": [
+    {
+      "model": "seed0",
+      "budget": 16,
+      "trials": 100,
+      "selected_trials": 100,
+      "abstentions": 0,
+      "abstention_frequency": 0.0,
+      "unique_queried_subsets": 100,
+      "selection_counts": {
+        "full_640": 0,
+        "full_960": 17,
+        "full_1280": 66,
+        "fixed_slices_640_plus_global": 17
+      },
+      "oracle_winner_count": 66,
+      "oracle_winner_frequency_unconditional": 0.66,
+      "oracle_winner_frequency_conditional_on_selection": 0.66,
+      "regret_pp_conditional_on_selection": {
+        "mean": 0.3419163097506083,
+        "median": 0.0,
+        "p90": 1.1827456612873881,
+        "min": 0.0,
+        "max": 1.1827456612873881
+      },
+      "represented_class_count": {
+        "mean": 10.0,
+        "median": 10.0,
+        "p90": 10.0,
+        "min": 10.0,
+        "max": 10.0
+      },
+      "missing_class_counts": {
+        "pedestrian": 0,
+        "people": 0,
+        "bicycle": 0,
+        "car": 0,
+        "van": 0,
+        "truck": 0,
+        "tricycle": 0,
+        "awning-tricycle": 0,
+        "bus": 0,
+        "motor": 0
+      },
+      "queried_gt_boxes": {
+        "mean": 1159.96,
+        "median": 1166.0,
+        "p90": 1389.9,
+        "min": 754.0,
+        "max": 1592.0
+      },
+      "selection_wall_seconds_actual": {
+        "mean": 0.017569602997391486,
+        "median": 0.017635849988437258,
+        "p90": 0.019206250002025627,
+        "min": 0.014673500001663342,
+        "max": 0.020022699987748638
+      },
+      "selection_wall_seconds_actual_total": 1.7569602997391485,
+      "memoised_metric_calls": 0,
+      "actual_candidate_ap_computations": 400,
+      "abstention_regret_imputed": false
+    },
+    {
+      "model": "seed0",
+      "budget": 32,
+      "trials": 100,
+      "selected_trials": 100,
+      "abstentions": 0,
+      "abstention_frequency": 0.0,
+      "unique_queried_subsets": 100,
+      "selection_counts": {
+        "full_640": 0,
+        "full_960": 17,
+        "full_1280": 69,
+        "fixed_slices_640_plus_global": 14
+      },
+      "oracle_winner_count": 69,
+      "oracle_winner_frequency_unconditional": 0.69,
+      "oracle_winner_frequency_conditional_on_selection": 0.69,
+      "regret_pp_conditional_on_selection": {
+        "mean": 0.3064339399119867,
+        "median": 0.0,
+        "p90": 1.1827456612873881,
+        "min": 0.0,
+        "max": 1.1827456612873881
+      },
+      "represented_class_count": {
+        "mean": 10.0,
+        "median": 10.0,
+        "p90": 10.0,
+        "min": 10.0,
+        "max": 10.0
+      },
+      "missing_class_counts": {
+        "pedestrian": 0,
+        "people": 0,
+        "bicycle": 0,
+        "car": 0,
+        "van": 0,
+        "truck": 0,
+        "tricycle": 0,
+        "awning-tricycle": 0,
+        "bus": 0,
+        "motor": 0
+      },
+      "queried_gt_boxes": {
+        "mean": 2282.68,
+        "median": 2290.5,
+        "p90": 2597.0,
+        "min": 1666.0,
+        "max": 3187.0
+      },
+      "selection_wall_seconds_actual": {
+        "mean": 0.02746913999959361,
+        "median": 0.027239200004260056,
+        "p90": 0.0296729400230106,
+        "min": 0.024229000002378598,
+        "max": 0.03243259998271242
+      },
+      "selection_wall_seconds_actual_total": 2.746913999959361,
+      "memoised_metric_calls": 0,
+      "actual_candidate_ap_computations": 400,
+      "abstention_regret_imputed": false
+    },
+    {
+      "model": "seed0",
+      "budget": 64,
+      "trials": 100,
+      "selected_trials": 100,
+      "abstentions": 0,
+      "abstention_frequency": 0.0,
+      "unique_queried_subsets": 100,
+      "selection_counts": {
+        "full_640": 0,
+        "full_960": 11,
+        "full_1280": 84,
+        "fixed_slices_640_plus_global": 5
+      },
+      "oracle_winner_count": 84,
+      "oracle_winner_frequency_unconditional": 0.84,
+      "oracle_winner_frequency_conditional_on_selection": 0.84,
+      "regret_pp_conditional_on_selection": {
+        "mean": 0.1502752254555033,
+        "median": 0.0,
+        "p90": 0.8285267490103081,
+        "min": 0.0,
+        "max": 1.1827456612873881
+      },
+      "represented_class_count": {
+        "mean": 10.0,
+        "median": 10.0,
+        "p90": 10.0,
+        "min": 10.0,
+        "max": 10.0
+      },
+      "missing_class_counts": {
+        "pedestrian": 0,
+        "people": 0,
+        "bicycle": 0,
+        "car": 0,
+        "van": 0,
+        "truck": 0,
+        "tricycle": 0,
+        "awning-tricycle": 0,
+        "bus": 0,
+        "motor": 0
+      },
+      "queried_gt_boxes": {
+        "mean": 4569.96,
+        "median": 4524.5,
+        "p90": 4983.5,
+        "min": 3850.0,
+        "max": 5528.0
+      },
+      "selection_wall_seconds_actual": {
+        "mean": 0.057163940000755246,
+        "median": 0.0564903499907814,
+        "p90": 0.06197868001763709,
+        "min": 0.0476605000148993,
+        "max": 0.06622030001017265
+      },
+      "selection_wall_seconds_actual_total": 5.716394000075525,
+      "memoised_metric_calls": 0,
+      "actual_candidate_ap_computations": 400,
+      "abstention_regret_imputed": false
+    },
+    {
+      "model": "seed0",
+      "budget": 128,
+      "trials": 100,
+      "selected_trials": 100,
+      "abstentions": 0,
+      "abstention_frequency": 0.0,
+      "unique_queried_subsets": 100,
+      "selection_counts": {
+        "full_640": 0,
+        "full_960": 2,
+        "full_1280": 97,
+        "fixed_slices_640_plus_global": 1
+      },
+      "oracle_winner_count": 97,
+      "oracle_winner_frequency_unconditional": 0.97,
+      "oracle_winner_frequency_conditional_on_selection": 0.97,
+      "regret_pp_conditional_on_selection": {
+        "mean": 0.028397991593080044,
+        "median": 0.0,
+        "p90": 0.0,
+        "min": 0.0,
+        "max": 1.1827456612873881
+      },
+      "represented_class_count": {
+        "mean": 10.0,
+        "median": 10.0,
+        "p90": 10.0,
+        "min": 10.0,
+        "max": 10.0
+      },
+      "missing_class_counts": {
+        "pedestrian": 0,
+        "people": 0,
+        "bicycle": 0,
+        "car": 0,
+        "van": 0,
+        "truck": 0,
+        "tricycle": 0,
+        "awning-tricycle": 0,
+        "bus": 0,
+        "motor": 0
+      },
+      "queried_gt_boxes": {
+        "mean": 9112.49,
+        "median": 9139.5,
+        "p90": 9840.1,
+        "min": 7973.0,
+        "max": 10239.0
+      },
+      "selection_wall_seconds_actual": {
+        "mean": 0.12524127099954058,
+        "median": 0.12398894999932963,
+        "p90": 0.1356811199861113,
+        "min": 0.10974470002111048,
+        "max": 0.15095819998532534
+      },
+      "selection_wall_seconds_actual_total": 12.524127099954057,
+      "memoised_metric_calls": 0,
+      "actual_candidate_ap_computations": 400,
+      "abstention_regret_imputed": false
+    },
+    {
+      "model": "seed0",
+      "budget": 256,
+      "trials": 100,
+      "selected_trials": 100,
+      "abstentions": 0,
+      "abstention_frequency": 0.0,
+      "unique_queried_subsets": 100,
+      "selection_counts": {
+        "full_640": 0,
+        "full_960": 0,
+        "full_1280": 100,
+        "fixed_slices_640_plus_global": 0
+      },
+      "oracle_winner_count": 100,
+      "oracle_winner_frequency_unconditional": 1.0,
+      "oracle_winner_frequency_conditional_on_selection": 1.0,
+      "regret_pp_conditional_on_selection": {
+        "mean": 0.0,
+        "median": 0.0,
+        "p90": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "represented_class_count": {
+        "mean": 10.0,
+        "median": 10.0,
+        "p90": 10.0,
+        "min": 10.0,
+        "max": 10.0
+      },
+      "missing_class_counts": {
+        "pedestrian": 0,
+        "people": 0,
+        "bicycle": 0,
+        "car": 0,
+        "van": 0,
+        "truck": 0,
+        "tricycle": 0,
+        "awning-tricycle": 0,
+        "bus": 0,
+        "motor": 0
+      },
+      "queried_gt_boxes": {
+        "mean": 18198.75,
+        "median": 18185.5,
+        "p90": 18906.100000000002,
+        "min": 16736.0,
+        "max": 19531.0
+      },
+      "selection_wall_seconds_actual": {
+        "mean": 0.2619846230011899,
+        "median": 0.25454209999588784,
+        "p90": 0.29288785001263024,
+        "min": 0.23139859997900203,
+        "max": 0.3118127000052482
+      },
+      "selection_wall_seconds_actual_total": 26.19846230011899,
+      "memoised_metric_calls": 0,
+      "actual_candidate_ap_computations": 400,
+      "abstention_regret_imputed": false
+    },
+    {
+      "model": "seed0",
+      "budget": 548,
+      "trials": 100,
+      "selected_trials": 100,
+      "abstentions": 0,
+      "abstention_frequency": 0.0,
+      "unique_queried_subsets": 1,
+      "selection_counts": {
+        "full_640": 0,
+        "full_960": 0,
+        "full_1280": 100,
+        "fixed_slices_640_plus_global": 0
+      },
+      "oracle_winner_count": 100,
+      "oracle_winner_frequency_unconditional": 1.0,
+      "oracle_winner_frequency_conditional_on_selection": 1.0,
+      "regret_pp_conditional_on_selection": {
+        "mean": 0.0,
+        "median": 0.0,
+        "p90": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "represented_class_count": {
+        "mean": 10.0,
+        "median": 10.0,
+        "p90": 10.0,
+        "min": 10.0,
+        "max": 10.0
+      },
+      "missing_class_counts": {
+        "pedestrian": 0,
+        "people": 0,
+        "bicycle": 0,
+        "car": 0,
+        "van": 0,
+        "truck": 0,
+        "tricycle": 0,
+        "awning-tricycle": 0,
+        "bus": 0,
+        "motor": 0
+      },
+      "queried_gt_boxes": {
+        "mean": 38759.0,
+        "median": 38759.0,
+        "p90": 38759.0,
+        "min": 38759.0,
+        "max": 38759.0
+      },
+      "selection_wall_seconds_actual": {
+        "mean": 0.006916240001155529,
+        "median": 5.49999822396785e-06,
+        "p90": 6.399990525096655e-06,
+        "min": 4.6000059228390455e-06,
+        "max": 0.6910729000228457
+      },
+      "selection_wall_seconds_actual_total": 0.6916240001155529,
+      "memoised_metric_calls": 99,
+      "actual_candidate_ap_computations": 4,
+      "abstention_regret_imputed": false
+    },
+    {
+      "model": "seed1",
+      "budget": 16,
+      "trials": 100,
+      "selected_trials": 100,
+      "abstentions": 0,
+      "abstention_frequency": 0.0,
+      "unique_queried_subsets": 100,
+      "selection_counts": {
+        "full_640": 0,
+        "full_960": 27,
+        "full_1280": 53,
+        "fixed_slices_640_plus_global": 20
+      },
+      "oracle_winner_count": 53,
+      "oracle_winner_frequency_unconditional": 0.53,
+      "oracle_winner_frequency_conditional_on_selection": 0.53,
+      "regret_pp_conditional_on_selection": {
+        "mean": 0.5305325096482371,
+        "median": 0.0,
+        "p90": 1.5047067203839042,
+        "min": 0.0,
+        "max": 1.5047067203839042
+      },
+      "represented_class_count": {
+        "mean": 10.0,
+        "median": 10.0,
+        "p90": 10.0,
+        "min": 10.0,
+        "max": 10.0
+      },
+      "missing_class_counts": {
+        "pedestrian": 0,
+        "people": 0,
+        "bicycle": 0,
+        "car": 0,
+        "van": 0,
+        "truck": 0,
+        "tricycle": 0,
+        "awning-tricycle": 0,
+        "bus": 0,
+        "motor": 0
+      },
+      "queried_gt_boxes": {
+        "mean": 1159.96,
+        "median": 1166.0,
+        "p90": 1389.9,
+        "min": 754.0,
+        "max": 1592.0
+      },
+      "selection_wall_seconds_actual": {
+        "mean": 0.017924152000050528,
+        "median": 0.0178029999951832,
+        "p90": 0.019189759992877954,
+        "min": 0.015292600000975654,
+        "max": 0.020588699990184978
+      },
+      "selection_wall_seconds_actual_total": 1.7924152000050526,
+      "memoised_metric_calls": 0,
+      "actual_candidate_ap_computations": 400,
+      "abstention_regret_imputed": false
+    },
+    {
+      "model": "seed1",
+      "budget": 32,
+      "trials": 100,
+      "selected_trials": 100,
+      "abstentions": 0,
+      "abstention_frequency": 0.0,
+      "unique_queried_subsets": 100,
+      "selection_counts": {
+        "full_640": 0,
+        "full_960": 16,
+        "full_1280": 72,
+        "fixed_slices_640_plus_global": 12
+      },
+      "oracle_winner_count": 72,
+      "oracle_winner_frequency_unconditional": 0.72,
+      "oracle_winner_frequency_conditional_on_selection": 0.72,
+      "regret_pp_conditional_on_selection": {
+        "mean": 0.3166188304884129,
+        "median": 0.0,
+        "p90": 1.5047067203839042,
+        "min": 0.0,
+        "max": 1.5047067203839042
+      },
+      "represented_class_count": {
+        "mean": 10.0,
+        "median": 10.0,
+        "p90": 10.0,
+        "min": 10.0,
+        "max": 10.0
+      },
+      "missing_class_counts": {
+        "pedestrian": 0,
+        "people": 0,
+        "bicycle": 0,
+        "car": 0,
+        "van": 0,
+        "truck": 0,
+        "tricycle": 0,
+        "awning-tricycle": 0,
+        "bus": 0,
+        "motor": 0
+      },
+      "queried_gt_boxes": {
+        "mean": 2282.68,
+        "median": 2290.5,
+        "p90": 2597.0,
+        "min": 1666.0,
+        "max": 3187.0
+      },
+      "selection_wall_seconds_actual": {
+        "mean": 0.027997051999846007,
+        "median": 0.027753700007451698,
+        "p90": 0.02993277999921702,
+        "min": 0.024905099999159575,
+        "max": 0.032653700007358566
+      },
+      "selection_wall_seconds_actual_total": 2.7997051999846008,
+      "memoised_metric_calls": 0,
+      "actual_candidate_ap_computations": 400,
+      "abstention_regret_imputed": false
+    },
+    {
+      "model": "seed1",
+      "budget": 64,
+      "trials": 100,
+      "selected_trials": 100,
+      "abstentions": 0,
+      "abstention_frequency": 0.0,
+      "unique_queried_subsets": 100,
+      "selection_counts": {
+        "full_640": 0,
+        "full_960": 11,
+        "full_1280": 85,
+        "fixed_slices_640_plus_global": 4
+      },
+      "oracle_winner_count": 85,
+      "oracle_winner_frequency_unconditional": 0.85,
+      "oracle_winner_frequency_conditional_on_selection": 0.85,
+      "regret_pp_conditional_on_selection": {
+        "mean": 0.15372541034446793,
+        "median": 0.0,
+        "p90": 0.8503376502646525,
+        "min": 0.0,
+        "max": 1.5047067203839042
+      },
+      "represented_class_count": {
+        "mean": 10.0,
+        "median": 10.0,
+        "p90": 10.0,
+        "min": 10.0,
+        "max": 10.0
+      },
+      "missing_class_counts": {
+        "pedestrian": 0,
+        "people": 0,
+        "bicycle": 0,
+        "car": 0,
+        "van": 0,
+        "truck": 0,
+        "tricycle": 0,
+        "awning-tricycle": 0,
+        "bus": 0,
+        "motor": 0
+      },
+      "queried_gt_boxes": {
+        "mean": 4569.96,
+        "median": 4524.5,
+        "p90": 4983.5,
+        "min": 3850.0,
+        "max": 5528.0
+      },
+      "selection_wall_seconds_actual": {
+        "mean": 0.05772528999834321,
+        "median": 0.05753889998595696,
+        "p90": 0.06240796999773011,
+        "min": 0.048927700001513585,
+        "max": 0.0689260000071954
+      },
+      "selection_wall_seconds_actual_total": 5.772528999834321,
+      "memoised_metric_calls": 0,
+      "actual_candidate_ap_computations": 400,
+      "abstention_regret_imputed": false
+    },
+    {
+      "model": "seed1",
+      "budget": 128,
+      "trials": 100,
+      "selected_trials": 100,
+      "abstentions": 0,
+      "abstention_frequency": 0.0,
+      "unique_queried_subsets": 100,
+      "selection_counts": {
+        "full_640": 0,
+        "full_960": 4,
+        "full_1280": 96,
+        "fixed_slices_640_plus_global": 0
+      },
+      "oracle_winner_count": 96,
+      "oracle_winner_frequency_unconditional": 0.96,
+      "oracle_winner_frequency_conditional_on_selection": 0.96,
+      "regret_pp_conditional_on_selection": {
+        "mean": 0.0340135060105861,
+        "median": 0.0,
+        "p90": 0.0,
+        "min": 0.0,
+        "max": 0.8503376502646525
+      },
+      "represented_class_count": {
+        "mean": 10.0,
+        "median": 10.0,
+        "p90": 10.0,
+        "min": 10.0,
+        "max": 10.0
+      },
+      "missing_class_counts": {
+        "pedestrian": 0,
+        "people": 0,
+        "bicycle": 0,
+        "car": 0,
+        "van": 0,
+        "truck": 0,
+        "tricycle": 0,
+        "awning-tricycle": 0,
+        "bus": 0,
+        "motor": 0
+      },
+      "queried_gt_boxes": {
+        "mean": 9112.49,
+        "median": 9139.5,
+        "p90": 9840.1,
+        "min": 7973.0,
+        "max": 10239.0
+      },
+      "selection_wall_seconds_actual": {
+        "mean": 0.12857233100105078,
+        "median": 0.12837360000412446,
+        "p90": 0.13683400000445545,
+        "min": 0.11390599998412654,
+        "max": 0.144780799979344
+      },
+      "selection_wall_seconds_actual_total": 12.857233100105077,
+      "memoised_metric_calls": 0,
+      "actual_candidate_ap_computations": 400,
+      "abstention_regret_imputed": false
+    },
+    {
+      "model": "seed1",
+      "budget": 256,
+      "trials": 100,
+      "selected_trials": 100,
+      "abstentions": 0,
+      "abstention_frequency": 0.0,
+      "unique_queried_subsets": 100,
+      "selection_counts": {
+        "full_640": 0,
+        "full_960": 2,
+        "full_1280": 98,
+        "fixed_slices_640_plus_global": 0
+      },
+      "oracle_winner_count": 98,
+      "oracle_winner_frequency_unconditional": 0.98,
+      "oracle_winner_frequency_conditional_on_selection": 0.98,
+      "regret_pp_conditional_on_selection": {
+        "mean": 0.01700675300529305,
+        "median": 0.0,
+        "p90": 0.0,
+        "min": 0.0,
+        "max": 0.8503376502646525
+      },
+      "represented_class_count": {
+        "mean": 10.0,
+        "median": 10.0,
+        "p90": 10.0,
+        "min": 10.0,
+        "max": 10.0
+      },
+      "missing_class_counts": {
+        "pedestrian": 0,
+        "people": 0,
+        "bicycle": 0,
+        "car": 0,
+        "van": 0,
+        "truck": 0,
+        "tricycle": 0,
+        "awning-tricycle": 0,
+        "bus": 0,
+        "motor": 0
+      },
+      "queried_gt_boxes": {
+        "mean": 18198.75,
+        "median": 18185.5,
+        "p90": 18906.100000000002,
+        "min": 16736.0,
+        "max": 19531.0
+      },
+      "selection_wall_seconds_actual": {
+        "mean": 0.2684075880004093,
+        "median": 0.26565914998354856,
+        "p90": 0.28504766000551174,
+        "min": 0.2488477000151761,
+        "max": 0.32024359999923036
+      },
+      "selection_wall_seconds_actual_total": 26.84075880004093,
+      "memoised_metric_calls": 0,
+      "actual_candidate_ap_computations": 400,
+      "abstention_regret_imputed": false
+    },
+    {
+      "model": "seed1",
+      "budget": 548,
+      "trials": 100,
+      "selected_trials": 100,
+      "abstentions": 0,
+      "abstention_frequency": 0.0,
+      "unique_queried_subsets": 1,
+      "selection_counts": {
+        "full_640": 0,
+        "full_960": 0,
+        "full_1280": 100,
+        "fixed_slices_640_plus_global": 0
+      },
+      "oracle_winner_count": 100,
+      "oracle_winner_frequency_unconditional": 1.0,
+      "oracle_winner_frequency_conditional_on_selection": 1.0,
+      "regret_pp_conditional_on_selection": {
+        "mean": 0.0,
+        "median": 0.0,
+        "p90": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "represented_class_count": {
+        "mean": 10.0,
+        "median": 10.0,
+        "p90": 10.0,
+        "min": 10.0,
+        "max": 10.0
+      },
+      "missing_class_counts": {
+        "pedestrian": 0,
+        "people": 0,
+        "bicycle": 0,
+        "car": 0,
+        "van": 0,
+        "truck": 0,
+        "tricycle": 0,
+        "awning-tricycle": 0,
+        "bus": 0,
+        "motor": 0
+      },
+      "queried_gt_boxes": {
+        "mean": 38759.0,
+        "median": 38759.0,
+        "p90": 38759.0,
+        "min": 38759.0,
+        "max": 38759.0
+      },
+      "selection_wall_seconds_actual": {
+        "mean": 0.006878349000762682,
+        "median": 5.399982910603285e-06,
+        "p90": 6.219992064870895e-06,
+        "min": 4.699977580457926e-06,
+        "max": 0.6872886999917682
+      },
+      "selection_wall_seconds_actual_total": 0.6878349000762682,
+      "memoised_metric_calls": 99,
+      "actual_candidate_ap_computations": 4,
+      "abstention_regret_imputed": false
+    },
+    {
+      "model": "seed2",
+      "budget": 16,
+      "trials": 100,
+      "selected_trials": 100,
+      "abstentions": 0,
+      "abstention_frequency": 0.0,
+      "unique_queried_subsets": 100,
+      "selection_counts": {
+        "full_640": 1,
+        "full_960": 24,
+        "full_1280": 48,
+        "fixed_slices_640_plus_global": 27
+      },
+      "oracle_winner_count": 48,
+      "oracle_winner_frequency_unconditional": 0.48,
+      "oracle_winner_frequency_conditional_on_selection": 0.48,
+      "regret_pp_conditional_on_selection": {
+        "mean": 0.37723163566655044,
+        "median": 0.4563449733450682,
+        "p90": 0.8265071133108108,
+        "min": 0.0,
+        "max": 4.4551921469815206
+      },
+      "represented_class_count": {
+        "mean": 10.0,
+        "median": 10.0,
+        "p90": 10.0,
+        "min": 10.0,
+        "max": 10.0
+      },
+      "missing_class_counts": {
+        "pedestrian": 0,
+        "people": 0,
+        "bicycle": 0,
+        "car": 0,
+        "van": 0,
+        "truck": 0,
+        "tricycle": 0,
+        "awning-tricycle": 0,
+        "bus": 0,
+        "motor": 0
+      },
+      "queried_gt_boxes": {
+        "mean": 1159.96,
+        "median": 1166.0,
+        "p90": 1389.9,
+        "min": 754.0,
+        "max": 1592.0
+      },
+      "selection_wall_seconds_actual": {
+        "mean": 0.017563000000081957,
+        "median": 0.017356600001221523,
+        "p90": 0.019008529986604118,
+        "min": 0.015240399981848896,
+        "max": 0.023651600000448525
+      },
+      "selection_wall_seconds_actual_total": 1.7563000000081956,
+      "memoised_metric_calls": 0,
+      "actual_candidate_ap_computations": 400,
+      "abstention_regret_imputed": false
+    },
+    {
+      "model": "seed2",
+      "budget": 32,
+      "trials": 100,
+      "selected_trials": 100,
+      "abstentions": 0,
+      "abstention_frequency": 0.0,
+      "unique_queried_subsets": 100,
+      "selection_counts": {
+        "full_640": 0,
+        "full_960": 17,
+        "full_1280": 58,
+        "fixed_slices_640_plus_global": 25
+      },
+      "oracle_winner_count": 58,
+      "oracle_winner_frequency_unconditional": 0.58,
+      "oracle_winner_frequency_conditional_on_selection": 0.58,
+      "regret_pp_conditional_on_selection": {
+        "mean": 0.2842054237963643,
+        "median": 0.0,
+        "p90": 0.8265071133108108,
+        "min": 0.0,
+        "max": 0.8265071133108108
+      },
+      "represented_class_count": {
+        "mean": 10.0,
+        "median": 10.0,
+        "p90": 10.0,
+        "min": 10.0,
+        "max": 10.0
+      },
+      "missing_class_counts": {
+        "pedestrian": 0,
+        "people": 0,
+        "bicycle": 0,
+        "car": 0,
+        "van": 0,
+        "truck": 0,
+        "tricycle": 0,
+        "awning-tricycle": 0,
+        "bus": 0,
+        "motor": 0
+      },
+      "queried_gt_boxes": {
+        "mean": 2282.68,
+        "median": 2290.5,
+        "p90": 2597.0,
+        "min": 1666.0,
+        "max": 3187.0
+      },
+      "selection_wall_seconds_actual": {
+        "mean": 0.02733735299902037,
+        "median": 0.02720275000319816,
+        "p90": 0.029238729990902358,
+        "min": 0.024211399984778836,
+        "max": 0.031647600000724196
+      },
+      "selection_wall_seconds_actual_total": 2.733735299902037,
+      "memoised_metric_calls": 0,
+      "actual_candidate_ap_computations": 400,
+      "abstention_regret_imputed": false
+    },
+    {
+      "model": "seed2",
+      "budget": 64,
+      "trials": 100,
+      "selected_trials": 100,
+      "abstentions": 0,
+      "abstention_frequency": 0.0,
+      "unique_queried_subsets": 100,
+      "selection_counts": {
+        "full_640": 0,
+        "full_960": 19,
+        "full_1280": 69,
+        "fixed_slices_640_plus_global": 12
+      },
+      "oracle_winner_count": 69,
+      "oracle_winner_frequency_unconditional": 0.69,
+      "oracle_winner_frequency_conditional_on_selection": 0.69,
+      "regret_pp_conditional_on_selection": {
+        "mean": 0.18588639853286026,
+        "median": 0.0,
+        "p90": 0.8265071133108108,
+        "min": 0.0,
+        "max": 0.8265071133108108
+      },
+      "represented_class_count": {
+        "mean": 10.0,
+        "median": 10.0,
+        "p90": 10.0,
+        "min": 10.0,
+        "max": 10.0
+      },
+      "missing_class_counts": {
+        "pedestrian": 0,
+        "people": 0,
+        "bicycle": 0,
+        "car": 0,
+        "van": 0,
+        "truck": 0,
+        "tricycle": 0,
+        "awning-tricycle": 0,
+        "bus": 0,
+        "motor": 0
+      },
+      "queried_gt_boxes": {
+        "mean": 4569.96,
+        "median": 4524.5,
+        "p90": 4983.5,
+        "min": 3850.0,
+        "max": 5528.0
+      },
+      "selection_wall_seconds_actual": {
+        "mean": 0.05614842299954034,
+        "median": 0.056118900000001304,
+        "p90": 0.05993908999953419,
+        "min": 0.047715599997900426,
+        "max": 0.06757229997310787
+      },
+      "selection_wall_seconds_actual_total": 5.614842299954034,
+      "memoised_metric_calls": 0,
+      "actual_candidate_ap_computations": 400,
+      "abstention_regret_imputed": false
+    },
+    {
+      "model": "seed2",
+      "budget": 128,
+      "trials": 100,
+      "selected_trials": 100,
+      "abstentions": 0,
+      "abstention_frequency": 0.0,
+      "unique_queried_subsets": 100,
+      "selection_counts": {
+        "full_640": 0,
+        "full_960": 15,
+        "full_1280": 82,
+        "fixed_slices_640_plus_global": 3
+      },
+      "oracle_winner_count": 82,
+      "oracle_winner_frequency_unconditional": 0.82,
+      "oracle_winner_frequency_conditional_on_selection": 0.82,
+      "regret_pp_conditional_on_selection": {
+        "mean": 0.09324695940108456,
+        "median": 0.0,
+        "p90": 0.4563449733450682,
+        "min": 0.0,
+        "max": 0.8265071133108108
+      },
+      "represented_class_count": {
+        "mean": 10.0,
+        "median": 10.0,
+        "p90": 10.0,
+        "min": 10.0,
+        "max": 10.0
+      },
+      "missing_class_counts": {
+        "pedestrian": 0,
+        "people": 0,
+        "bicycle": 0,
+        "car": 0,
+        "van": 0,
+        "truck": 0,
+        "tricycle": 0,
+        "awning-tricycle": 0,
+        "bus": 0,
+        "motor": 0
+      },
+      "queried_gt_boxes": {
+        "mean": 9112.49,
+        "median": 9139.5,
+        "p90": 9840.1,
+        "min": 7973.0,
+        "max": 10239.0
+      },
+      "selection_wall_seconds_actual": {
+        "mean": 0.12476958100072806,
+        "median": 0.12369835001300089,
+        "p90": 0.13436384001688567,
+        "min": 0.11268349998863414,
+        "max": 0.14667839999310672
+      },
+      "selection_wall_seconds_actual_total": 12.476958100072807,
+      "memoised_metric_calls": 0,
+      "actual_candidate_ap_computations": 400,
+      "abstention_regret_imputed": false
+    },
+    {
+      "model": "seed2",
+      "budget": 256,
+      "trials": 100,
+      "selected_trials": 100,
+      "abstentions": 0,
+      "abstention_frequency": 0.0,
+      "unique_queried_subsets": 100,
+      "selection_counts": {
+        "full_640": 0,
+        "full_960": 7,
+        "full_1280": 93,
+        "fixed_slices_640_plus_global": 0
+      },
+      "oracle_winner_count": 93,
+      "oracle_winner_frequency_unconditional": 0.93,
+      "oracle_winner_frequency_conditional_on_selection": 0.93,
+      "regret_pp_conditional_on_selection": {
+        "mean": 0.031944148134154776,
+        "median": 0.0,
+        "p90": 0.0,
+        "min": 0.0,
+        "max": 0.4563449733450682
+      },
+      "represented_class_count": {
+        "mean": 10.0,
+        "median": 10.0,
+        "p90": 10.0,
+        "min": 10.0,
+        "max": 10.0
+      },
+      "missing_class_counts": {
+        "pedestrian": 0,
+        "people": 0,
+        "bicycle": 0,
+        "car": 0,
+        "van": 0,
+        "truck": 0,
+        "tricycle": 0,
+        "awning-tricycle": 0,
+        "bus": 0,
+        "motor": 0
+      },
+      "queried_gt_boxes": {
+        "mean": 18198.75,
+        "median": 18185.5,
+        "p90": 18906.100000000002,
+        "min": 16736.0,
+        "max": 19531.0
+      },
+      "selection_wall_seconds_actual": {
+        "mean": 0.25901202099979853,
+        "median": 0.2564005000022007,
+        "p90": 0.2695678999996744,
+        "min": 0.24141429999144748,
+        "max": 0.3048666999966372
+      },
+      "selection_wall_seconds_actual_total": 25.901202099979855,
+      "memoised_metric_calls": 0,
+      "actual_candidate_ap_computations": 400,
+      "abstention_regret_imputed": false
+    },
+    {
+      "model": "seed2",
+      "budget": 548,
+      "trials": 100,
+      "selected_trials": 100,
+      "abstentions": 0,
+      "abstention_frequency": 0.0,
+      "unique_queried_subsets": 1,
+      "selection_counts": {
+        "full_640": 0,
+        "full_960": 0,
+        "full_1280": 100,
+        "fixed_slices_640_plus_global": 0
+      },
+      "oracle_winner_count": 100,
+      "oracle_winner_frequency_unconditional": 1.0,
+      "oracle_winner_frequency_conditional_on_selection": 1.0,
+      "regret_pp_conditional_on_selection": {
+        "mean": 0.0,
+        "median": 0.0,
+        "p90": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "represented_class_count": {
+        "mean": 10.0,
+        "median": 10.0,
+        "p90": 10.0,
+        "min": 10.0,
+        "max": 10.0
+      },
+      "missing_class_counts": {
+        "pedestrian": 0,
+        "people": 0,
+        "bicycle": 0,
+        "car": 0,
+        "van": 0,
+        "truck": 0,
+        "tricycle": 0,
+        "awning-tricycle": 0,
+        "bus": 0,
+        "motor": 0
+      },
+      "queried_gt_boxes": {
+        "mean": 38759.0,
+        "median": 38759.0,
+        "p90": 38759.0,
+        "min": 38759.0,
+        "max": 38759.0
+      },
+      "selection_wall_seconds_actual": {
+        "mean": 0.0064209300008951685,
+        "median": 5.5000127758830786e-06,
+        "p90": 6.399993435479701e-06,
+        "min": 4.799978341907263e-06,
+        "max": 0.6415321000094991
+      },
+      "selection_wall_seconds_actual_total": 0.6420930000895169,
+      "memoised_metric_calls": 99,
+      "actual_candidate_ap_computations": 4,
+      "abstention_regret_imputed": false
+    }
+  ],
+  "full_pool_controls": {
+    "seed0": {
+      "scores_ap50_95_percent": {
+        "full_640": 18.965967894631838,
+        "full_960": 22.85219904735726,
+        "full_1280": 23.680725796367568,
+        "fixed_slices_640_plus_global": 22.49798013508018
+      },
+      "best": "full_1280",
+      "fixed_baselines_regret_pp": {
+        "full_640": 4.71475790173573,
+        "full_960": 0.8285267490103081,
+        "full_1280": 0.0,
+        "fixed_slices_640_plus_global": 1.1827456612873881
+      },
+      "uniform_random_configuration_expected_regret_pp": 1.6815075780083566,
+      "fixed1280_development_informed": true,
+      "historical_full_pool_parity": "pass"
+    },
+    "seed1": {
+      "scores_ap50_95_percent": {
+        "full_640": 18.57683530456414,
+        "full_960": 22.60162338118046,
+        "full_1280": 23.451961031445112,
+        "fixed_slices_640_plus_global": 21.947254311061208
+      },
+      "best": "full_1280",
+      "fixed_baselines_regret_pp": {
+        "full_640": 4.875125726880974,
+        "full_960": 0.8503376502646525,
+        "full_1280": 0.0,
+        "fixed_slices_640_plus_global": 1.5047067203839042
+      },
+      "uniform_random_configuration_expected_regret_pp": 1.8075425243823826,
+      "fixed1280_development_informed": true,
+      "historical_full_pool_parity": "pass"
+    },
+    "seed2": {
+      "scores_ap50_95_percent": {
+        "full_640": 18.74313776510277,
+        "full_960": 22.741984938739222,
+        "full_1280": 23.19832991208429,
+        "fixed_slices_640_plus_global": 22.37182279877348
+      },
+      "best": "full_1280",
+      "fixed_baselines_regret_pp": {
+        "full_640": 4.4551921469815206,
+        "full_960": 0.4563449733450682,
+        "full_1280": 0.0,
+        "fixed_slices_640_plus_global": 0.8265071133108108
+      },
+      "uniform_random_configuration_expected_regret_pp": 1.43451105840935,
+      "fixed1280_development_informed": true,
+      "historical_full_pool_parity": "pass"
+    }
+  },
+  "regret_denominator": "Selected draws only; abstentions reported separately and never imputed zero",
+  "winner_denominators": "Both all100 query draws and selected-only frequencies are reported",
+  "dependence": "Nested budgets and identical masks across checkpoints are dependent. Full548 is one unique subset per checkpoint, repeated100 times with99 memoised metric calls.",
+  "cost_scope": "Actual CPU selection timing includes memo hits/coverage checks; raw-input loading, matching cache, oracle and parity control costs are separate",
+  "fixed_control_caveat": "All548 labels already exposed in development. Fixed1280 zero additional queries is not independent label-free discovery.",
+  "limits": [
+    "All548 labels already exposed/checkpoints selected on them",
+    "Subsample pooled AP is a plug-in selector, not a design-unbiased AP estimator",
+    "Finite-pool acquisition randomness does not establish new-scene performance",
+    "No independent practical AP tolerance or deployment budget justified",
+    "GT box count is not measured annotation time; no real annotation saving",
+    "Three checkpoints are not300 independently trained models",
+    "Software information boundary is architectural, not a hostile-code security sandbox"
+  ]
+}

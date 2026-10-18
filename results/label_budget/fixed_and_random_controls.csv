@@ -1,0 +1,16 @@
+model,control,expected_ap50_95_percent,expected_full_pool_regret_pp,extra_query_images_in_this_simulation,prior_development_labels_already_exposed
+seed0,full_640,18.965967894631838,4.71475790173573,0,True
+seed0,full_960,22.85219904735726,0.8285267490103081,0,True
+seed0,full_1280,23.680725796367568,0.0,0,True
+seed0,fixed_slices_640_plus_global,22.49798013508018,1.1827456612873881,0,True
+seed0,uniform_random_configuration_expected_value,21.99921821835921,1.6815075780083566,0,True
+seed1,full_640,18.57683530456414,4.875125726880974,0,True
+seed1,full_960,22.60162338118046,0.8503376502646525,0,True
+seed1,full_1280,23.451961031445112,0.0,0,True
+seed1,fixed_slices_640_plus_global,21.947254311061208,1.5047067203839042,0,True
+seed1,uniform_random_configuration_expected_value,21.64441850706273,1.8075425243823826,0,True
+seed2,full_640,18.74313776510277,4.4551921469815206,0,True
+seed2,full_960,22.741984938739222,0.4563449733450682,0,True
+seed2,full_1280,23.19832991208429,0.0,0,True
+seed2,fixed_slices_640_plus_global,22.37182279877348,0.8265071133108108,0,True
+seed2,uniform_random_configuration_expected_value,21.76381885367494,1.43451105840935,0,True
