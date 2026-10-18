@@ -1,6 +1,6 @@
 # UAV vision: resolution, slicing and evaluation sensitivity
 
-By Ziad Ismail | software review candidate 0.3.0
+By Ziad Ismail | Software release 0.3.0
 
 I compare four established inference settings across three separately trained YOLO11n checkpoints on all 548 VisDrone2019-DET validation images (38,759 curated targets). The study asks how resolution, slicing, processing cost and scoring conventions affect the conclusions supported by the same saved detections. It introduces no new detector or slicing method.
 
@@ -31,7 +31,7 @@ All three 150-epoch training runs completed, selecting epochs 95/103/114 on expo
 
 The legacy scoring port agrees with unchanged captured publisher functions under Octave 11.3.0 on all four seed-0 settings/all 548 images, including filtered arrays and seven metrics. Seeds 1 and 2 have ported scoring only; no exact-publisher/MATLAB equivalence is inferred for them. This is not an official challenge submission.
 
-This candidate includes source, synthetic CPU controls, settings, aggregate JSON/CSV and a script that regenerates its aggregate tables/plot. No images, labels, raw detections, per-object records, weights, captured toolkit or executable native/current-matcher reference branch is bundled. Those numerical controls are **aggregate-only** here. Fresh installation, retraining and complete public benchmark reproduction remain unverified.
+This repository includes source, synthetic CPU controls, settings, aggregate JSON/CSV and a script that regenerates its aggregate tables/plot. No images, labels, raw detections, per-object records, weights, captured toolkit or executable native/current-matcher reference branch is bundled. Those numerical controls are **aggregate-only** here. Fresh installation, retraining and complete public benchmark reproduction remain unverified.
 
 Read [result definitions](RESULTS.md), [reproduction scope](REPRODUCING.md), [data policy](DATA.md), [notices](THIRD_PARTY_NOTICES.md) and [preparation](READ_FIRST.md).
 
@@ -50,7 +50,7 @@ The [label-budget diagnostic](label_budget/RESULTS.md) completes 100 frozen quer
 
 ![Retrospective label-budget results](results/label_budget/label_budget_summary.png)
 
-Root src/ contains the historical study adapters preserved from 0.2; use portable_execution/ for prospective explicit-path execution. Label-budget source/controls and aggregates are supplied, while real full-grid historical-input orchestration and private prediction caches remain outside this release. Read the scoped commands before running workloads. No repository or paper publication is implied by a local review candidate.
+Root src/ contains the historical study adapters preserved from 0.2; use portable_execution/ for prospective explicit-path execution. Label-budget source/controls and aggregates are supplied, while real full-grid historical-input orchestration and private prediction caches remain outside this release. Read the scoped commands before running workloads. The repository accompanies an empirical development study; the scientific results are not peer reviewed.
 
 ## References
 
@@ -61,4 +61,4 @@ Root src/ contains the historical study adapters preserved from 0.2; use portabl
 - Known AP integration change: [PR 24175](https://github.com/ultralytics/ultralytics/pull/24175), [earlier discussion 8568](https://github.com/ultralytics/ultralytics/issues/8568).
 - Known matching-order work: [PR 26616](https://github.com/ultralytics/ultralytics/pull/26616), merged 11 October 2026, and [issue 22583](https://github.com/ultralytics/ultralytics/issues/22583). [Captured validator](https://github.com/ultralytics/ultralytics/blob/abc2066dd6bd87f6806f73a170cf8f764ca2ebbe/ultralytics/engine/validator.py) defines this control; later upstream code may differ.
 
-Code licence: AGPL-3.0-only, with upstream rights retained. This software review candidate is not a peer-reviewed publication or production-readiness certification.
+Code licence: AGPL-3.0-only, with upstream rights retained. This software release accompanies a development study. Its results are not peer reviewed, and it is not a production-readiness certification.

@@ -10,6 +10,6 @@ Understand these distinctions before presenting this component or its results:
 6. Prospective development inference requires completed actual training evidence, including contiguous epoch histories and selected-checkpoint/config/source hashes. Resume uses exact bytes even when two preparations have equal semantics.
 7. Saved-output scoring must keep the run's purpose and verify all pairs, logs and data. A smoke AP number must not become a research comparison or a new benchmark row.
 
-The underlying study compares established full-frame resolution and fixed slicing on exposed validation. This component improves how another researcher could prepare and check that task. It does not add novelty to the detector, expand the validation population, establish independent human mastery or convert an unpublished package into peer review.
+The underlying study compares established full-frame resolution and fixed slicing on exposed validation. This component improves how another researcher could prepare and check that task. It does not add detector novelty, expand the validation population or establish peer-reviewed scientific results.
 
-Before a future release, inspect the complete code/prose and recorded scope. Keep private operational paths, historical certificate, local datasets/weights, raw smoke outputs and test-attempt directories out of the public payload. Preserve licences and actual source attribution.
+The distributed files contain source, configuration, aggregate results and controls. Dataset copies, model weights, raw smoke outputs and local execution records are excluded. Obtain external inputs independently and retain their licences and source attribution.

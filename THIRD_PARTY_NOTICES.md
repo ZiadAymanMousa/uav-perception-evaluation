@@ -1,12 +1,12 @@
 # Third-party software and source notices
 
-Original study code and documentation: Copyright (c) 2026 Ziad Ismail. Candidate code licence: AGPL-3.0-only; full text in LICENSE. Existing upstream rights are preserved.
+Original study code and documentation: Copyright (c) 2026 Ziad Ismail. Code licence: AGPL-3.0-only; full text in LICENSE. Existing upstream rights are preserved.
 
 ## Ultralytics
 
 Ultralytics YOLO 8.3.253 and ultralytics-thop 2.2.2 use AGPL-3.0. Upstream notice: “Ultralytics — AGPL-3.0 License — https://ultralytics.com/license”. Source: https://github.com/ultralytics/ultralytics/tree/v8.3.253 and https://github.com/ultralytics/thop/tree/v2.2.2 . Matching pair extraction in analyse_size_errors.py follows the inspected non-SciPy matcher in Ultralytics engine/validator.py; upstream attribution and the AGPL licence apply. The package does not vendor the installed framework, AP source snapshot or model weights.
 
-Changes to study source for this candidate are licence headers, extraction of the study's own input/coordinate-validation helpers into study_inputs.py, and the corresponding size-analysis import. Original scientific outputs are retained; the candidate is not the upstream Ultralytics package. Do not treat this as a permissively licensed substitute for Ultralytics or its models. Publisher guidance: https://www.ultralytics.com/license .
+Changes to study source for this release are licence headers, extraction of the study's own input/coordinate-validation helpers into study_inputs.py, and the corresponding size-analysis import. Original scientific outputs are retained; this repository is not the upstream Ultralytics package. Do not treat this as a permissively licensed substitute for Ultralytics or its models. Publisher guidance: https://www.ultralytics.com/license .
 
 ## Other dependencies
 
@@ -16,7 +16,7 @@ Dependencies are installed separately and keep their own licences: torch/torchvi
 
 SAHI and its author benchmark are MIT licensed; their code is not bundled. Cite the SAHI paper and retain MIT notices if later copying substantial source. MRU author code (AGPL-3.0) and PPAL source (Apache-2.0) are not bundled. Related-method attribution does not make this an exact reproduction.
 
-The VisDrone2018 DET toolkit README says research-purpose only; a general redistribution licence was not established. Captured MATLAB source, its source-mirroring port and reference evaluator branch are excluded pending rights review. No licence in this candidate is applied to that code or to VisDrone data. Publisher: https://github.com/VisDrone/VisDrone2018-DET-toolkit .
+The VisDrone2018 DET toolkit README says research-purpose only; a general redistribution licence was not established. Captured MATLAB source, its source-mirroring port and reference evaluator branch are not bundled because redistribution permission was not established. No licence in this release is applied to that code or to VisDrone data. Publisher: https://github.com/VisDrone/VisDrone2018-DET-toolkit .
 
 The upstream AP boundary change is documented at https://github.com/ultralytics/ultralytics/pull/24175 . Aggregate reporting of that known behavior is not a claim of original authorship of the change. Its executable publisher-source control is not bundled here.
 

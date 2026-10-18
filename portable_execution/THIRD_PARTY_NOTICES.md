@@ -1,6 +1,6 @@
 # Notices and scope
 
-Own source is AGPL-3.0-only, copyright 2026 Ziad Ismail. The audit, row conversion, curation and semantic identity helpers retain the reviewed implementation. Training/inference/review adapters derive from the separately preserved own-source software review candidate 0.2.0. Their changes are versioned here; historical experiment bytes are not replaced.
+Own source is AGPL-3.0-only, copyright 2026 Ziad Ismail. The audit, row conversion, curation and semantic identity helpers retain the reviewed implementation. Training/inference/review adapters derive from the separately preserved own-source study release 0.2.0. Their changes are versioned here; historical experiment bytes are not replaced.
 
 Ultralytics YOLO11 and its installed 8.3.253 framework provide training, prediction, matching and AP functions under their applicable upstream terms. This package does not vendor the framework, its starting/trained weights or its runtime. See https://github.com/ultralytics/ultralytics/tree/v8.3.253 . NumPy, Pillow, PyYAML, PyTorch, torchvision, OpenCV, psutil and Matplotlib are external dependencies with their respective upstream licences.
 
