@@ -58,6 +58,10 @@ This strengthens a bounded evaluation conclusion: the simple larger full-frame c
 
 ## What can be reproduced from this release
 
-The new branch supplies three aggregate CSV files, the verified PNG/SVG, derived data/protocol/validation summaries and the [technical report](reports/Technical%20Report.pdf). It does **not** supply the internal test-dev adapter, raw predictions, data, labels, weights or full audit/orchestrator. The existing aggregate renderer does not render the new test-dev figure or recompute these AP scores. [Reproduction scope](REPRODUCING.md) separates aggregate inspection from detector/scorer reproduction. Existing executable source and tests are unchanged in version 0.4.0.
+Version 0.5.0 retains the original aggregate CSV files, PNG/SVG, data/protocol/validation summaries and [technical report](reports/Technical%20Report.pdf) unchanged. It adds the [portable test-dev component](testdev_execution/README.md) and a separate table/figure renderer. No raw predictions, data, labels, weights, full private audit/orchestrator or captured native/current-matcher source is supplied.
+
+The later [software validation](testdev_execution/VALIDATION.md) records complete preparation/verification of all 1,610 pairs, same-pinned-scorer rescoring of 19,320 retained rows with twelve exact complete-summary matches, and a new one-image/four-setting CPU integration check. It introduces no new scientific result and does not claim a complete new inference sweep, clean installation, actual prospective training or independent evaluator.
+
+`src/render_testdev_results.py` reconstructs the test-dev tables and figure from bundled aggregates or six hash-bound supplied summaries. It does not infer detections or recompute AP. [Reproduction scope](REPRODUCING.md) separates this presentation layer, saved-output scoring and new inference.
 
 Prior methods and software: [VisDrone dataset](https://github.com/VisDrone/VisDrone-Dataset), [Ultralytics 8.3.253](https://github.com/ultralytics/ultralytics/tree/v8.3.253), [SAHI](https://arxiv.org/abs/2202.06934). Licence and source credits remain in [notices](THIRD_PARTY_NOTICES.md).

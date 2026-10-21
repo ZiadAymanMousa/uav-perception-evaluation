@@ -1,6 +1,6 @@
-# Reproduction in version 0.4
+# Reproduction in version 0.5
 
-Use [portable_execution/README.md](portable_execution/README.md) for the new prospective data/training/inference/scoring path and [PORTABLE_VALIDATION.md](PORTABLE_VALIDATION.md) for actual checked scope. The historical manifest-bound code remains in root src/ to preserve the original source. The separately versioned adapter does not relabel existing weights as trained on fresh data. Clean installation, full prospective retraining and complete public reproduction remain unverified.
+Use [portable_execution/README.md](portable_execution/README.md) for prospective training/development execution and [testdev_execution/README.md](testdev_execution/README.md) for explicit test-dev preparation, inference and retained-output scoring. [PORTABLE_VALIDATION.md](PORTABLE_VALIDATION.md) and the [test-dev validation record](testdev_execution/VALIDATION.md) separate actual checked scopes. The historical manifest-bound code remains in root src/ to preserve the original source. The separately versioned adapter does not relabel existing weights as trained on fresh data. Clean installation, full prospective retraining and complete public reproduction remain unverified.
 
 The label-budget [core/controls/protocol](label_budget/READ_FIRST.md) and aggregates are supplied. Its real full-grid orchestration and raw sufficient statistics are not bundled, so aggregates are inspectable numerical evidence rather than a standalone AP recomputation.
 
@@ -18,7 +18,7 @@ The packaged synthetic tests and own-loader extraction are checked with the exis
 
 ## Optional staged research workflow
 
-1. Obtain the original train/val datasets independently under the publisher's terms. [DATA.md](DATA.md) gives scope. These historical steps concern training/development; the separate completed test-dev confirmation is documented below and its adapter is not bundled. Create this package's `data/VisDrone2019-DET-train` and `data/VisDrone2019-DET-val` layouts only after obtaining the data lawfully.
+1. Obtain the original train/val datasets independently under the publisher's terms. [DATA.md](DATA.md) gives scope. These historical steps concern training/development; the separate completed test-dev confirmation and its new explicit-input component are documented below. Create this package's `data/VisDrone2019-DET-train` and `data/VisDrone2019-DET-val` layouts only after obtaining the data lawfully.
 2. Audit inputs with `python -B src/audit_dataset.py --split train=data/VisDrone2019-DET-train --split val=data/VisDrone2019-DET-val --output artifacts/train_val_audit_20261016.json`. Inspect the documented malformed-training-row policy before conversion; originals remain unchanged.
 3. `prepare_full_dataset.py` requires that audit and handles the three exact known exceptions plus float32 duplicate labels. It generates curated inputs/manifests. Ignored pixels remain in the converted training loss/metric.
 4. Training uses an independently obtained, licence-compliant original YOLO11n checkpoint at the expected local path, with matching acquisition/hash metadata. `train_full_baseline.py --config configs/baseline_yolo11n_640_seed0.json` is a real 150-epoch GPU workload, not a test command. It requires adequate local resources and reviewed settings. No weights are supplied.
@@ -45,10 +45,23 @@ The unchanged own loader is locally checked against all 6,576 original image/met
 Native source scoring, published-boundary execution and the isolated current-matcher control are **aggregate-only** in this package. Their original inputs and executable reference branch are not supplied. The figure script can render their numbers but cannot independently reproduce them. The exact captured source hashes/URLs identify what was used; replacing them with a current pip package would change the experiment. Do not claim all current-control code is executable from this package.
 
 
-## Version 0.4 test-dev scope
+## Version 0.5 test-dev execution and rendering
 
-The completed [confirmation](TESTDEV_RESULTS.md) adds all twelve development/test-dev AP rows, six contrasts, twelve diagnostic cost rows, PNG/SVG, derived integrity/validation summaries, a later presentation of the earlier internal plan and a technical-report PDF. These are inspectable aggregates and protocol evidence. No dataset, labels, weights, raw predictions, internal adapter, full audit/orchestrator or test-dev figure-building program is supplied.
+The completed [confirmation](TESTDEV_RESULTS.md) retains the twelve AP rows, six contrasts, twelve diagnostic cost rows, original PNG/SVG, derived integrity/validation summaries, later presentation of the earlier internal plan and technical-report PDF. Their scientific values and file bytes are unchanged by this software addition.
 
-The historical aggregate-rendering command remains unchanged and does not process these new test-dev files. The executable code/tests are byte-identical to version 0.3.0. Do not claim this release can independently regenerate test-dev AP or its figure. A portable executable test-dev extension would need explicit input/binding interfaces and targeted source/data/checkpoint/metric/completeness controls in a separately reviewed change.
+The [test-dev component](testdev_execution/README.md) supplies explicit raw/prepared/output/config/checkpoint inputs for preparation, verification, inference and saved-output scoring. Its release-time content identity is independent of paths and timestamps, with exact raw membership/content checks, nine-decimal converted labels, retained original annotations/exclusion fields, source snapshots and launch bindings. It is not a backdated preregistration or a claim that this new component executed the historical full inference runs.
 
-The actual retained test-dev runs completed on all 1,610 images with the three existing checkpoints. Separate same-algorithm CPU scoring agreed exactly for twelve summaries. That result does not close clean-install/full prospective training/cross-hardware determinism gaps, supply a second evaluator implementation, extend development native/reference controls to test-dev, or prove scene-independent performance. The [validation summary](results/testdev/validation_summary.json) records the exact checked scope.
+Two checkpoint routes stay separate. Exact frozen replay requires the user-supplied historical seed0/1/2 checkpoint hash. Prospective mode requires an actual completed baseline and its separate training data/config/binding; it cannot relabel fresh training as historical results. The older portable historical-certificate route remains CPU-smoke-only and is unchanged.
+
+On 21 October, complete preparation/verification passed for all 1,610 real pairs and 75,102 targets. All three retained 6,440-row prediction logs were validated and rescored with the same pinned scorer; all twelve complete method-summary objects matched exactly. A new seed-0 CPU inference/verification covered one sorted image and four settings only. The 62 synthetic/CPU controls exercise data/source/config/checkpoint changes, matrix/accounting, completion, provenance and write-path guards. These are existing-environment checks, not clean installation, an independent evaluator, a full new inference sweep or actual completed prospective training.
+
+The separate renderer reads bundled aggregates or six explicitly hash-bound development/test-dev summaries. It validates schemas, cells, differences and workload accounting, then reconstructs 12 AP rows, six contrasts, 12 cost rows and the PNG/SVG. Its 17 controls and both input modes passed. This is table/figure reconstruction without detection or AP recomputation. Numeric agreement does not promise byte-identical graphics across Matplotlib versions, platforms or rendering metadata.
+
+```console
+python -B -m unittest discover -s testdev_execution/tests -v
+python -B src/render_testdev_results.py --input-dir results/testdev --output-dir artifacts/testdev_render
+```
+
+The renderer requires a new output directory. For supplied summaries, `--summary-index` replaces `--input-dir`; the index names three seed pairs with explicit development/test-dev paths and SHA256 values. Paths resolve relative to the index. No retained raw prediction log, data, labels, weights, full private audit/orchestrator or captured native/current-matcher branch is distributed. The standalone source and data-dependent commands do not make those inputs available by association.
+
+The actual retained test-dev study remains the earlier all-image, three-checkpoint primary comparison. Its development native/reference/matcher controls do not extend to test-dev. Same-algorithm rescoring checks continuity, not evaluator independence, scene-independent generalisation, deployment timing or cross-hardware determinism. See [the execution validation](testdev_execution/VALIDATION.md) and [original confirmation validation summary](results/testdev/validation_summary.json) for the separate scopes.

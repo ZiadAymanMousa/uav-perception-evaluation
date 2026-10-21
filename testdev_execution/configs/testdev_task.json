@@ -1,0 +1,124 @@
+{
+  "schema": "uvd1-portable-testdev-task-v1",
+  "identity_scope": "Release-time content verification of earlier internally registered test-dev; not external preregistration.",
+  "split": "VisDrone2019-DET-test-dev",
+  "expected_identity_sha256": "b50b8d2f31831a22ccc1c80580c65902e443308e958eecc18eab037732f83ac2",
+  "expected_counts": {
+    "images": 1610,
+    "raw_rows": 77547,
+    "targets": 75102,
+    "excluded": 2445,
+    "duplicates": 0,
+    "clipped": 0,
+    "malformed_exceptions": 0
+  },
+  "class_names": [
+    "pedestrian",
+    "people",
+    "bicycle",
+    "car",
+    "van",
+    "truck",
+    "tricycle",
+    "awning-tricycle",
+    "bus",
+    "motor"
+  ],
+  "checkpoints": {
+    "seed0": {
+      "selected_development_epoch": 95,
+      "weights_sha256": "4d6eda28e25673f6175fb9ca32ad329d2469965b263cb4068492c25a69fa98f3",
+      "training": "Existing 150-epoch 640-input YOLO11n training; no test-dev training."
+    },
+    "seed1": {
+      "selected_development_epoch": 103,
+      "weights_sha256": "99a6f2263087473a48147437f2f57c8f9c0c934f89744d77e99061ba02c88c27",
+      "training": "Existing 150-epoch 640-input YOLO11n training; no test-dev training."
+    },
+    "seed2": {
+      "selected_development_epoch": 114,
+      "weights_sha256": "15636cb841282eac605e8b2b97c469eed86b932717098abea2c6f8d4acddde3b",
+      "training": "Existing 150-epoch 640-input YOLO11n training; no test-dev training."
+    }
+  },
+  "inference": {
+    "candidate_policy": "single highest-scoring class per proposal (DetectionPredictor multi_label=False); differs from multi-label training validation",
+    "confidence": 0.001,
+    "detector_nms_iou": 0.7,
+    "merge_nms_iou": 0.7,
+    "max_detections": 1000,
+    "precision": "FP32",
+    "batch": 1,
+    "rectangular_padding": false,
+    "warmup_per_input_size": 5,
+    "method_order": "rotate by image index",
+    "methods": [
+      {
+        "name": "full_640",
+        "kind": "full",
+        "input_size": 640
+      },
+      {
+        "name": "full_960",
+        "kind": "full",
+        "input_size": 960
+      },
+      {
+        "name": "full_1280",
+        "kind": "full",
+        "input_size": 1280
+      },
+      {
+        "name": "fixed_slices_640_plus_global",
+        "kind": "fixed",
+        "input_size": 640,
+        "tile_size": 640,
+        "overlap": 0.2,
+        "global_pass": true
+      }
+    ],
+    "timing_boundary": "JPEG read/decode through CPU output predictions; includes view construction, model preprocessing/inference/postprocessing, device transfers and CPU tile merge; artifact writing and metric calculation excluded",
+    "timing_limits": "Cached filesystem and desktop hardware; one inference per image/method is a first sweep, not a repeated stable latency benchmark"
+  },
+  "runtime_versions": {
+    "ultralytics": "8.3.253",
+    "torch": "2.10.0+cu128",
+    "numpy": "2.4.4",
+    "opencv": "4.13.0",
+    "torchvision": "0.25.0+cu128"
+  },
+  "framework_source_hashes": {
+    "metrics": "4a9c8c1a7b91c309a8ac9a92754b0342ab95a469a07e3d57dcf3438b0fd96563",
+    "matching": "daba9d56de2107daee309abe2fb3db682345c2e1114bb6477554a0f7544cdf09",
+    "predictor": "49cb7e5309037b9e19995b53625d3e7ca831ff404e94f054b2be0da1d15df9e5",
+    "nms": "cefd6b3b3305e9653c29d938d55ccd7f51f510cb7fbd91dc6c315b8379a7376a",
+    "detection_validator": "f944eb546dc7b6eac71c063be8151e80edace5df57abf744ba679b2e23644957"
+  },
+  "helper_sha256": {
+    "audit_dataset.py": "9000fd2dc040c6fec9d5d829c536dbd1095a5db4ae27f58f9a95af1413417d99",
+    "compare_inference.py": "dc4f9aa8288184dac91a002905bf935d02218b8295e26af71c87c89b210b254d",
+    "execution_inputs.py": "e0bac8454197ca28bc1b4dac7a35ae927663451dda27aac168582fbd21963ec1",
+    "inference_geometry.py": "16777b7ef26a2b109ff58bd86f1782155de9c0b944def2adb01c10ca6d895e4b",
+    "portable_preparer.py": "217950f6521c66b2162a5d56a0d6e812c9494dcddb8c4b1adcf4e6c60fa086d3",
+    "prepare_full_dataset.py": "03d749f5e373a15a9b50564a48bf8aeeb4e391cf0c293cda2316fb64faec8d57",
+    "prepare_training_pilot.py": "152ed2172576c9fb8d7fdc7ff842ae7c692f6877262130bcf89179ab2709d4b0",
+    "rescore_saved.py": "339e805b79c306178ebc4290566100f3fdccd66edff80cf97cae8a6a712d07a8",
+    "review_completed_baseline.py": "17c9be9662c86530d86b995c70f4890b00e5f9526c74d5d6fe7c22d6c48f2beb",
+    "run_records.py": "6dc7a01159c8f75c3dddb55e543d9876baea3f63458aac5ada59cb588c3a506f",
+    "score_converted_predictions.py": "c10f453967ab4a0f40a0675988c2095b301bc0d051a9cc58d2dd1fa1ca15cb8d",
+    "semantic_dataset.py": "78a23eea36ed30077dfaccf42a495b67d6100b7708d90e561653397650b6a1b2",
+    "study_inputs.py": "c1a34ec8be6fce2029bd30aed8afafc33a19091db9943e0cc6de378235b487b5",
+    "train_full_baseline.py": "628efa4bbcec59d5dde92bfcbf8e43a4b6c99aba124220718f404e8acd47085c"
+  },
+  "complete_accounting": {
+    "records": 6440,
+    "detector_passes": {
+      "full_640": 1610,
+      "full_960": 1610,
+      "full_1280": 1610,
+      "fixed_slices_640_plus_global": 11448
+    },
+    "warmup_calls": 15
+  },
+  "label_serialisation": "UTF-8 LF, class integer plus 4 normalised values to 9 decimal places; float32 decoding by pinned scorer. Historical CRLF label line endings are normalised for this portable identity."
+}

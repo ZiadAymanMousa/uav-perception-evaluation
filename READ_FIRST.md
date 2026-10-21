@@ -20,4 +20,13 @@ Read [TESTDEV_RESULTS.md](TESTDEV_RESULTS.md), the [protocol presentation](proto
 
 Keep scopes separate: 548 exposed development images/six conventions; 1,610 official test-dev images/one primary metric; development-only size, matcher, reference and label-budget checks. Public labels held out from this study do not prove blind/OOD or independent-scene performance. Explain all twelve AP rows, six contrasts and the timing-drift caveat. The later sanitised protocol presents an earlier internal plan without claiming public preregistration.
 
-The completed confirmation supports the simple full-1280 comparator within this declared task. A learned selector would require a meaningful decision failure, declared cost and fair prior-work/control analysis. The test-dev material provides aggregate and protocol evidence; the execution adapter and raw inputs are outside the distributed reproduction scope.
+The completed confirmation supports the simple full-1280 comparator within this declared task. A learned selector would require a meaningful decision failure, declared cost and fair prior-work/control analysis. The test-dev material provides aggregate/protocol evidence plus a separate [explicit-input execution component](testdev_execution/README.md). Raw inputs, weights and predictions remain user-supplied. Distinguish the complete retained-output rescoring from a new full inference run.
+
+
+## Version 0.5 execution and rendering preparation
+
+Read [the test-dev commands](testdev_execution/README.md) and [checked scope](testdev_execution/VALIDATION.md). Explain the release-time content identity, original ignored-row preservation, complete image/method matrix, source/config/checkpoint bindings and the distinction between exact historical-weight identity and actual completed prospective training. Historical weight identity does not promise identical predictions on every runtime or prove independent personal mastery.
+
+The checked scope is 62 synthetic/CPU controls, all 1,610 real image/annotation pairs prepared and verified, 19,320 retained rows validated/rescored with twelve exact full-summary matches, and one new sorted image/four settings on CPU. The same pinned scorer is reused. No clean installation, new full inference sweep or actual prospective training was performed for this component.
+
+The test-dev renderer reconstructs its 12 AP rows, six contrast rows, 12 cost rows and plot from bundled aggregates or six hash-bound supplied summaries. It has 17 passing controls and performs no AP recomputation or detector inference. Reconstructed timing summaries are not fresh latency measurements. Keep these software checks separate from scientific generalisation, publication novelty and robotics deployment claims.

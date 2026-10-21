@@ -6,7 +6,7 @@ Original study code and documentation: Copyright (c) 2026 Ziad Ismail. Code lice
 
 Ultralytics YOLO 8.3.253 and ultralytics-thop 2.2.2 use AGPL-3.0. Upstream notice: “Ultralytics — AGPL-3.0 License — https://ultralytics.com/license”. Source: https://github.com/ultralytics/ultralytics/tree/v8.3.253 and https://github.com/ultralytics/thop/tree/v2.2.2 . Matching pair extraction in analyse_size_errors.py follows the inspected non-SciPy matcher in Ultralytics engine/validator.py; upstream attribution and the AGPL licence apply. The package does not vendor the installed framework, AP source snapshot or model weights.
 
-Changes to study source for this release are licence headers, extraction of the study's own input/coordinate-validation helpers into study_inputs.py, and the corresponding size-analysis import. Original scientific outputs are retained; this repository is not the upstream Ultralytics package. Do not treat this as a permissively licensed substitute for Ultralytics or its models. Publisher guidance: https://www.ultralytics.com/license .
+The original public-source preparation added licence headers, extracted the study's own input/coordinate-validation functions into study_inputs.py, and updated the corresponding size-analysis import. Original scientific outputs are retained; this repository is not the upstream Ultralytics package. Do not treat this as a permissively licensed substitute for Ultralytics or its models. Publisher guidance: https://www.ultralytics.com/license .
 
 ## Other dependencies
 
@@ -29,3 +29,10 @@ Version 0.2 adds aggregate JSON/CSV and an original rendering script. It changes
 ## Version0.3 prospective execution and label-budget core
 
 The new original adapters retain AGPL-3.0-only and upstream rights. The selection core calls the separately installed Ultralytics8.3.253 AP function; captured framework/native/current-matcher implementation is not vendored. Two study-owned converted-score/geometry helpers retain their implementation with licence headers. Dataset filenames and query-index masks describe the experiment; no image/annotation data or labels are redistributed.
+
+
+## Version 0.5 test-dev execution and rendering
+
+The original test-dev execution adapters, synthetic controls and aggregate renderer retain AGPL-3.0-only, copyright 2026 Ziad Ismail, and existing upstream rights. The new component imports the unchanged study-owned conversion, geometry, training-context and converted-score modules from portable_execution/src; their source notices remain intact. Its inference and scoring call the separately installed Ultralytics framework and dependencies under their applicable licences. No captured framework/native/current-matcher source, runtime binary or model weight is newly redistributed.
+
+The release-time task configuration contains content/checkpoint/source identities, class names and fixed numerical settings. Those hashes grant no rights over the independently obtained VisDrone inputs or checkpoints. Original data, converted labels, exclusion records and raw predictions remain unbundled. Tables and figures are rendered from aggregate evidence; reconstruction is not an official challenge evaluation.

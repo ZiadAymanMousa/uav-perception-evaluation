@@ -1,6 +1,6 @@
 # UAV vision: resolution, slicing and evaluation sensitivity
 
-By Ziad Ismail | Software release 0.4.0
+By Ziad Ismail | Software release 0.5.0
 
 I compare four established inference settings across three separately trained YOLO11n checkpoints on 548 VisDrone2019-DET development images (38,759 curated targets), followed by a frozen confirmation on all 1,610 official test-dev images (75,102 targets). The study asks how resolution, slicing, processing cost and scoring conventions affect the conclusions supported by the same saved detections. It introduces no new detector or slicing method.
 
@@ -38,7 +38,7 @@ Its registered advantage is 0.510–0.858 AP points over full 960 and 0.894–1.
 
 Solid lines: test-dev; dashed: development. Existing checkpoints are not independent scene samples; no significance intervals are implied. Public test-dev labels were held out from this study, not a blind challenge. Scene grouping, near-duplicate absence and pretraining exposure remain unknown.
 
-Read [complete confirmation results](TESTDEV_RESULTS.md), [protocol presentation](protocols/testdev_confirmation.json), [all twelve AP rows](results/testdev/ap_comparison.csv), [six contrasts](results/testdev/registered_contrasts.csv) and the [technical report](reports/Technical%20Report.pdf). The new test-dev branch is aggregate/protocol evidence, not an executable public adapter. Its later protocol presentation records the earlier internal plan; it is not external preregistration.
+Read [complete confirmation results](TESTDEV_RESULTS.md), [protocol presentation](protocols/testdev_confirmation.json), [all twelve AP rows](results/testdev/ap_comparison.csv), [six contrasts](results/testdev/registered_contrasts.csv) and the [technical report](reports/Technical%20Report.pdf). The [portable test-dev component](testdev_execution/README.md) now supplies explicit preparation, inference and saved-output scoring interfaces. Its [validation record](testdev_execution/VALIDATION.md) separates complete real preparation and retained-log rescoring from a one-image CPU integration check. The later protocol presentation records the earlier internal plan; it is not external preregistration.
 
 ## Additional seed-0 development evidence
 
@@ -52,26 +52,29 @@ All three 150-epoch training runs completed, selecting epochs 95/103/114 on expo
 
 The legacy scoring port agrees with unchanged captured publisher functions under Octave 11.3.0 on all four seed-0 settings/all 548 images, including filtered arrays and seven metrics. Seeds 1 and 2 have ported scoring only; no exact-publisher/MATLAB equivalence is inferred for them. This is not an official challenge submission.
 
-This repository includes source, synthetic CPU controls, settings, aggregate JSON/CSV and a script that regenerates its aggregate tables/plot. No images, labels, raw detections, per-object records, weights, captured toolkit or executable native/current-matcher reference branch is bundled. Those numerical controls and the new test-dev confirmation are **aggregate-only** here; the internal test-dev execution adapter is not distributed. Fresh installation, retraining and complete public benchmark reproduction remain unverified.
+This repository includes source, synthetic CPU controls, settings, aggregate JSON/CSV, separate development/test-dev rendering programs and explicit-input portable execution. No images, labels, raw detections, per-object records, weights, captured toolkit or executable native/current-matcher reference branch is bundled. Native/reference/current-matcher numerical controls remain **aggregate-only**. Test-dev execution source is supplied, with complete real preparation, 19,320 retained rows rescored and one-image CPU integration checked. Fresh installation, actual prospective training and a complete new portable inference sweep remain unverified.
 
 Read [result definitions](RESULTS.md), [reproduction scope](REPRODUCING.md), [data policy](DATA.md), [notices](THIRD_PARTY_NOTICES.md) and [preparation](READ_FIRST.md).
 
 ```console
 python -B -m unittest discover -s tests -v
 python -B src/render_aggregate_results.py
+python -B src/render_testdev_results.py --input-dir results/testdev --output-dir artifacts/testdev_render
 ```
 
-These commands run synthetic CPU controls and render bundled aggregates. They do not reproduce raw inference/AP results or download data.
+These commands run the root synthetic controls and render bundled aggregates. The test-dev renderer validates and reconstructs tables/figures; it performs no inference or AP recomputation. Output directories must be new. No data are downloaded.
 
-## Existing portable and label-budget execution scope
+## Portable and label-budget execution scope
 
 The [portable component](portable_execution/README.md) connects explicit verified dataset paths/bindings to prospective training, completion review, inference and saved converted scoring. It removes the old generated-manifest dependency for new runs while retaining exact launch-byte resume checks. The original study retains its historical provenance. A bounded CPU preflight/certificate/one-image four-setting inference/rescore run verifies plumbing; no fresh 150-epoch training or full portable benchmark rerun is claimed. [Validation scope](PORTABLE_VALIDATION.md).
+
+The separate [test-dev component](testdev_execution/README.md) passes 62 synthetic/CPU controls. All 1,610 raw image/annotation pairs were prepared and verified; the same pinned scorer recovered all twelve complete historical method summaries from the three retained 6,440-row logs. A new seed-0 run covered only the first sorted image with all four settings on CPU and passed run verification. These are scoped software checks, not new detector results or an independent evaluator.
 
 The [label-budget diagnostic](label_budget/RESULTS.md) completes 100 frozen query orders at six budgets across three checkpoints, using the already exposed 548-image pool. [Protocol and preparation](label_budget/READ_FIRST.md), [aggregates](results/label_budget/label_budget_results.csv). Full 548 is one unique subset per checkpoint. These curves measure finite-pool query variability; they do not establish new-scene generalisation, annotation savings or active-method novelty.
 
 ![Retrospective label-budget results](results/label_budget/label_budget_summary.png)
 
-Root src/ contains the historical study adapters preserved from 0.2; use portable_execution/ for prospective explicit-path execution. Label-budget source/controls and aggregates are supplied, while real full-grid historical-input orchestration and private prediction caches remain outside this release. Read the scoped commands before running workloads. The repository accompanies an empirical development study and frozen primary test-dev confirmation; the scientific results are not peer reviewed.
+Root src/ contains preserved historical study adapters and aggregate renderers; use portable_execution/ for prospective training/development execution and testdev_execution/ for explicit test-dev preparation, inference and saved-output scoring. Label-budget source/controls and aggregates are supplied, while real full-grid historical-input orchestration and private prediction caches remain outside this release. Read the scoped commands before running workloads. The repository accompanies an empirical development study and frozen primary test-dev confirmation; the scientific results are not peer reviewed.
 
 ## References
 
