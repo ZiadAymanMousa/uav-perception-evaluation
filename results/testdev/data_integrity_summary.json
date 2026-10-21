@@ -1,0 +1,105 @@
+{
+  "schema": "uav-testdev-data-integrity-summary-1",
+  "split": "VisDrone2019-DET-test-dev",
+  "publisher_url": "https://github.com/VisDrone/VisDrone-Dataset",
+  "official_archive_url": "https://drive.google.com/file/d/1PFdW_VFSCfZ_sTSZAGjQdifF_Xd5mf0V/view",
+  "source_access_date": "2026-10-18",
+  "archive_sha256": "78b0c5078a14ee43d0b803a354e76016d7260d1704cfd1c2dc821858d839e261",
+  "archive_bytes": 311045829,
+  "counts": {
+    "images": 1610,
+    "raw_rows": 77547,
+    "targets": 75102,
+    "excluded": 2445,
+    "duplicates": 0,
+    "clipped": 0,
+    "malformed_exceptions": 0
+  },
+  "classes": [
+    {
+      "converted_index": 0,
+      "native_category": 1,
+      "name": "pedestrian",
+      "targets": 21006
+    },
+    {
+      "converted_index": 1,
+      "native_category": 2,
+      "name": "people",
+      "targets": 6376
+    },
+    {
+      "converted_index": 2,
+      "native_category": 3,
+      "name": "bicycle",
+      "targets": 1302
+    },
+    {
+      "converted_index": 3,
+      "native_category": 4,
+      "name": "car",
+      "targets": 28074
+    },
+    {
+      "converted_index": 4,
+      "native_category": 5,
+      "name": "van",
+      "targets": 5771
+    },
+    {
+      "converted_index": 5,
+      "native_category": 6,
+      "name": "truck",
+      "targets": 2659
+    },
+    {
+      "converted_index": 6,
+      "native_category": 7,
+      "name": "tricycle",
+      "targets": 530
+    },
+    {
+      "converted_index": 7,
+      "native_category": 8,
+      "name": "awning-tricycle",
+      "targets": 599
+    },
+    {
+      "converted_index": 8,
+      "native_category": 9,
+      "name": "bus",
+      "targets": 2940
+    },
+    {
+      "converted_index": 9,
+      "native_category": 10,
+      "name": "motor",
+      "targets": 5845
+    }
+  ],
+  "excluded_native_annotations": {
+    "ignored_regions": 2180,
+    "other_category_rows": 265
+  },
+  "identity_sha256": {
+    "original_source_audit": "0a30049e8511351b177a12e569e05e389078acf69f741caa404da7fd2f9e2463",
+    "converted_manifest": "5a0f4c08b6df88a0033fa3798025dc69cd1e4c6dbd04ed9ba0a4bd828a34df47",
+    "preparation_binding": "70845cd36c36b7f097fea53a87139679596a65b1de4079b68f6c8eb00e3c1519"
+  },
+  "checks": {
+    "all_source_pairs_present": true,
+    "testdev_malformed_rows": 0,
+    "exact_byte_cross_split_duplicate_image_groups": 0,
+    "train_validation_source_entries_match_historical_audit": true,
+    "recorded_stream_files_verified_in_final_audit": 8050,
+    "all_converted_labels_and_sidecars_independently_reconstructed": true,
+    "all_copied_image_hashes_and_dimensions_independently_verified": true
+  },
+  "conversion": "Native scored categories 1..10 map to indices 0..9; normalised float32 labels; excluded annotations retained separately. No native ignore-region masking in primary converted scoring.",
+  "limits": [
+    "Exact-byte checks do not exclude near duplicates, shared scenes or pretraining exposure.",
+    "Verified scene/sequence grouping is unavailable; scene independence and OOD are unestablished.",
+    "Public labels were held out from this study, not a blind challenge server.",
+    "Identity hashes identify retained records; the raw records and dataset are not redistributed."
+  ]
+}

@@ -9,6 +9,15 @@ Reconcile seed 0 fixed-threshold size recall with aggregate AP and converted pre
 Run the synthetic suite and aggregate-rendering script; inspect source, exported units and reproduction limitations. Raw data, labels, detections, weights and executable reference controls are absent. Fresh install/retraining remains unverified. The code and aggregate package is a bounded software study, not an accepted paper or production certification.
 
 
-## Version0.3 preparation
+## Portable and retrospective selection preparation
 
 Read [portable preparation](portable_execution/READ_FIRST.md), [execution scope](PORTABLE_VALIDATION.md) and [label-budget preparation](label_budget/READ_FIRST.md). Historical scripts and new prospective adapters are different entrypoints. Never call the bounded smoke run a new detector result or the retrospective diagnostic a population guarantee.
+
+
+## Version 0.4 confirmation preparation
+
+Read [TESTDEV_RESULTS.md](TESTDEV_RESULTS.md), the [protocol presentation](protocols/testdev_confirmation.json) and the [technical report](reports/Technical%20Report.pdf). Explain why full 1280 remains highest under the primary test-dev scorer while absolute AP falls; give the 3.712–4.421-point range only for full 1280. A same-checkpoint cross-split difference is not a paired-image observation or proof of a causal mechanism.
+
+Keep scopes separate: 548 exposed development images/six conventions; 1,610 official test-dev images/one primary metric; development-only size, matcher, reference and label-budget checks. Public labels held out from this study do not prove blind/OOD or independent-scene performance. Explain all twelve AP rows, six contrasts and the timing-drift caveat. The later sanitised protocol presents an earlier internal plan without claiming public preregistration.
+
+The completed confirmation supports the simple full-1280 comparator within this declared task. A learned selector would require a meaningful decision failure, declared cost and fair prior-work/control analysis. The test-dev material provides aggregate and protocol evidence; the execution adapter and raw inputs are outside the distributed reproduction scope.

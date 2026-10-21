@@ -1,0 +1,83 @@
+{
+  "schema": "uav-testdev-validation-summary-1",
+  "status": "PASS",
+  "completed_runs": 3,
+  "all_run_exit_codes": [
+    0,
+    0,
+    0
+  ],
+  "images_per_run": 1610,
+  "settings_per_run": 4,
+  "image_setting_records_total": 19320,
+  "recorded_detector_passes_total": 48834,
+  "additional_warmup_passes_per_checkpoint": 15,
+  "saved_output_audit": [
+    "Every row identity and rotation",
+    "Finite geometry/classes/confidences and output caps",
+    "Data/checkpoint/config/runtime/source identity",
+    "Deterministic pass/pixel/timing accounting",
+    "Converted labels, exclusion sidecars and image copies"
+  ],
+  "separate_rescore": {
+    "summary_count": 12,
+    "all_complete_score_objects_exact": true,
+    "algorithm": "Same pinned scorer executed separately on CPU, using saved predictions and labels before reading original summary objects.",
+    "independent_evaluator_implementation": false,
+    "external_validation": false
+  },
+  "console_flagged_line_count": 0,
+  "runtime": {
+    "python": "3.13.13",
+    "torch": "2.10.0+cu128",
+    "ultralytics": "8.3.253",
+    "numpy": "2.4.4",
+    "opencv": "4.13.0",
+    "torchvision": "0.25.0+cu128",
+    "cuda_runtime": "12.8"
+  },
+  "framework_source_sha256": {
+    "metrics": "4a9c8c1a7b91c309a8ac9a92754b0342ab95a469a07e3d57dcf3438b0fd96563",
+    "matching": "daba9d56de2107daee309abe2fb3db682345c2e1114bb6477554a0f7544cdf09",
+    "predictor": "49cb7e5309037b9e19995b53625d3e7ca831ff404e94f054b2be0da1d15df9e5",
+    "nms": "cefd6b3b3305e9653c29d938d55ccd7f51f510cb7fbd91dc6c315b8379a7376a",
+    "detection_validator": "f944eb546dc7b6eac71c063be8151e80edace5df57abf744ba679b2e23644957"
+  },
+  "execution_adapter_sha256": "8dd52706533625c9997609430798fcf8b993eff6d5a685d8629464ded1c89358",
+  "audit_program_sha256": "1378590cf63b64102c0a1db21d25ab7adc3cea5ba824e82b3b88485370c7c635",
+  "data_identity_sha256": {
+    "source_audit": "0a30049e8511351b177a12e569e05e389078acf69f741caa404da7fd2f9e2463",
+    "converted_manifest": "5a0f4c08b6df88a0033fa3798025dc69cd1e4c6dbd04ed9ba0a4bd828a34df47"
+  },
+  "protected_input_checkpoint": {
+    "listed_input_count": 54,
+    "before_after_match": true,
+    "timing": "Captured after GPU launch while seed0 inference was ongoing, before any test-dev summary; this is not retroactive prelaunch protection.",
+    "scope_counts": {
+      "three_selected_weights_and_their_progress_run_records": 9,
+      "three_development_run_records_and_summaries": 6,
+      "preflight_and_prepared_binding": 2,
+      "internal_plan_scope_clarification_and_source_audit": 3,
+      "development_inference_config": 1,
+      "training_and_testdev_converted_manifests": 2,
+      "listed_source_files": 28,
+      "previous_release_archive": 1,
+      "two_existing_pdf_snapshots": 2
+    },
+    "scope_limit": "Only these 54 listed records/sources/snapshots are covered, not every historical artifact. Earlier plan/checkpoint/preflight evidence retains its own dates."
+  },
+  "result_asset_sha256": {
+    "figures/testdev_development_comparison.png": "a3043acfeccb1abde54ff6c2fe783ac1fcea8a61226d125eff896edc3f2200ff",
+    "figures/testdev_development_comparison.svg": "9ba9dbe0df3339819b32b33c75726a533320f01a26f2e7480e16dea8dac3b99c",
+    "reports/Technical Report.pdf": "5f4eb46664015f4f29b4637b0ec1ec446a8c5ad42273551a0cd488979c176f1f",
+    "results/testdev/ap_comparison.csv": "c2514d50f6ec090b7cfb1f398720f6d1471bbec870407cd02fb8eb87aeba1751",
+    "results/testdev/diagnostic_costs.csv": "9b395f00cffd67e21691c618cac2edafa298ebd8ec07bebdb19be9d4c8748888",
+    "results/testdev/registered_contrasts.csv": "ec6d8b03fae5c9325eb964df9ef5d01593fc4e10307262a2644936764d4b0bc6"
+  },
+  "limits": [
+    "Same-algorithm separate execution is not an independently implemented evaluator or external validation.",
+    "No scene independence, OOD, blind challenge, statistical significance, field/flight safety or stable timing claim.",
+    "Only primary converted scoring was run on test-dev; development controls remain separately scoped.",
+    "This release supplies aggregates and protocol, not executable test-dev orchestration or raw inputs."
+  ]
+}

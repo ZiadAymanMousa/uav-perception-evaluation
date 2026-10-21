@@ -1,6 +1,8 @@
 # Result definitions and numerical exports
 
-By Ziad Ismail
+By Ziad Ismail | Version 0.4.0
+
+The score conventions, reference/matcher and size controls below concern exposed development data. The separate [completed test-dev confirmation](TESTDEV_RESULTS.md) uses only the primary pinned converted metric. No six-convention test-dev extension is implied.
 
 [aggregate_results.json](results/aggregate_results.json) contains the three-seed/four-setting/six-convention score cube: 72 AP values and 18 within-model convention comparisons. [Protocol CSV](results/three_seed_protocol_scores.csv) gives the same values in long form. Score units are percent; differences use percentage points (pp). All contrasts below mean **fixed slices plus global minus full 960**.
 
@@ -21,7 +23,7 @@ Retained-output TP flags under cap reduction are unchanged for seed 0; seed 1 ha
 
 [current_matcher_results.json](results/current_matcher_results.json) and [its CSV](results/current_matcher_scores.csv) contain 96 aggregate score rows: 2 seeds x 4 methods x 2 matchers x 3 cap modes x 2 AP integrations. The cap modes are all saved (<=1,000), first 500 retaining old matches, and first 500 rematched. The fixed-match mode is a diagnostic counterfactual, not a new detector output. Comparisons share detections and cannot be counted as independent experiments.
 
-The control uses captured upstream matcher commit `abc2066dd6bd87f6806f73a170cf8f764ca2ebbe`, validator Git blob `9ae6fded948119f723186ca4551d73aac795cc17`, and the published AP source Git blob `2c790f77b0ee6b177332ac092a3cc70bd54d1352`. Source hashes and score-input identities appear in [provenance](results/provenance.json). The immutable capture is the definition of current in this dated control. The installed 8.3.253 package remains unchanged. No current-matcher result exists for seed 2 in this candidate.
+The control uses captured upstream matcher commit `abc2066dd6bd87f6806f73a170cf8f764ca2ebbe`, validator Git blob `9ae6fded948119f723186ca4551d73aac795cc17`, and the published AP source Git blob `2c790f77b0ee6b177332ac092a3cc70bd54d1352`. Source hashes and score-input identities appear in [provenance](results/provenance.json). The immutable capture is the definition of current in this dated control. The installed 8.3.253 package remains unchanged. No current-matcher result exists for seed 2 in this release.
 
 Across all checked current-matcher cases for seeds 0 and 1, removing a lower-confidence suffix changes no retained TP flags. This concerns these saved inputs and reviewed matcher; it does not prove every floating-point/tie/runtime case. Full 1280 leads in all 24 matcher/cap-mode/integration ranking cells. Small AP changes reflect scoring semantics, not improved model predictions. Known upstream matching and integration work is cited in the README; this is a reproduction/control, not original bug discovery.
 
@@ -31,9 +33,18 @@ Across all checked current-matcher cases for seeds 0 and 1, removing a lower-con
 
 The [size summary](results/size_recall_summary.json), [all size points](results/size_recall_all_points.csv) and [size plot](results/size_recall_precision.png) remain **seed 0 only**, with the pinned matcher. Bins are (0,256), [256,1024), [1024,9216), [9216,infinity) original-pixel area, with 11,950/14,625/11,116/1,068 targets. Match against the full target population before grouping. Primary confidence/IoU are 0.25/0.50; secondary all-saved/0.50 and 0.25/0.75 are retained. Unmatched predictions have no GT area, and converted-task false positives may include visible native-ignored objects. This is recall/precision evidence, not size AP, calibrated confidence or causal miss attribution.
 
-Full seed-0 exact-source Octave agreement covers four settings/all 548 inputs; it does not extend automatically to seeds 1/2 or every MATLAB version. The executable reference branches and original inputs are absent. Aggregates cannot regenerate benchmark scores alone. No new detector, selector, publication acceptance, final-test/generalization or autonomous-flight result is established.
+Full seed-0 exact-source Octave agreement covers four settings/all 548 inputs; it does not extend automatically to seeds 1/2 or every MATLAB version. The executable reference branches and original inputs are absent. Aggregates cannot regenerate benchmark scores alone. No new detector, selector, publication acceptance, scene-independent/OOD generalisation or autonomous-flight result is established. The separate official test-dev confirmation is a bounded split-specific primary comparison, not a blind challenge.
 
 
 ## Retrospective label-budget result
 
 The [complete diagnostic](label_budget/RESULTS.md) and [18 model/budget aggregate rows](results/label_budget/label_budget_results.csv) are a separate finite-pool selection analysis using pinned converted AP. They do not extend the native/current-matcher or seed0 size-analysis scopes. [Design and limitations](label_budget/READ_FIRST.md).
+
+
+## Test-dev primary numerical exports
+
+[ap_comparison.csv](results/testdev/ap_comparison.csv) contains twelve rows: seed, method, development/test-dev AP50-95 percentages and test-dev-minus-development AP points. These are same-checkpoint cross-split differences, not paired images. [registered_contrasts.csv](results/testdev/registered_contrasts.csv) contains all six full-1280-minus-960/slicing differences, computed before rounding. All are positive. Full-1280 test-dev AP is 19.260103/19.314283/19.485830%; its development-minus-test-dev differences are 4.420623/4.137678/3.712500 points. This drop has no isolated causal explanation.
+
+[diagnostic_costs.csv](results/testdev/diagnostic_costs.csv) supplies all twelve pass/pixel/median/p95 rows. Slicing uses 11,448 passes per checkpoint versus 1,610 for each full setting; input pixels are 7.110559 times full 640, or 1.777640 times full 1280. Different image dimensions mean the development slicing ratio does not transfer unchanged. Timing is one desktop sweep with substantial drift, not stable/onboard latency or energy.
+
+The [data](results/testdev/data_integrity_summary.json), [validation](results/testdev/validation_summary.json) and [protocol](protocols/testdev_confirmation.json) summaries distinguish all-run checks from public executable scope. See the [complete report](TESTDEV_RESULTS.md) for every primary value, known limits and confirmation/exploration boundary. The existing aggregate renderer does not recompute test-dev AP or generate the new test-dev figure.

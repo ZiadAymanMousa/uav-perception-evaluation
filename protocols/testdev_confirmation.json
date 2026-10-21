@@ -1,0 +1,141 @@
+{
+  "schema": "uav-testdev-confirmation-protocol-presentation-1",
+  "presentation_version": "0.4.0",
+  "presentation_date": "2026-10-18",
+  "publication_chronology": {
+    "status": "Release-time presentation of an earlier internal plan; not external preregistration.",
+    "original_internal_plan_created_utc": "2026-10-18T02:56:55.766341+00:00",
+    "original_internal_plan_sha256": "53e41e6c99207acc510843f02bb94bcbfb9f809345c01fb309fa32b20c2fac97",
+    "pre_acquisition_scope_clarification_created_utc": "2026-10-18T02:57:17.507022+00:00",
+    "pre_acquisition_scope_clarification_sha256": "04b6d806c833ff596fb896403a5e95e52531aaac2479cacc541131f5a21b2283",
+    "original_plan_precedes_acquisition": true,
+    "known_at_plan_time": "Existing development findings and the small two-draw seed-0 label-budget pilot.",
+    "hash_scope": "Original digests identify the retained internal records. This sanitised presentation has different bytes and is not backdated as a public registration.",
+    "clarification": "Inherited 548-image/development-selection metadata was explicitly nonoperative for test-dev before acquisition. All official test-dev images were included; numerical settings were unchanged."
+  },
+  "question": "Do the frozen development inference-setting contrasts persist on official DET test-dev, held out from this study?",
+  "split": {
+    "name": "VisDrone2019-DET-test-dev",
+    "images": 1610,
+    "all_official_images_included": true,
+    "publisher_url": "https://github.com/VisDrone/VisDrone-Dataset",
+    "archive_sha256": "78b0c5078a14ee43d0b803a354e76016d7260d1704cfd1c2dc821858d839e261"
+  },
+  "checkpoints": {
+    "seed0": {
+      "selected_development_epoch": 95,
+      "weights_sha256": "4d6eda28e25673f6175fb9ca32ad329d2469965b263cb4068492c25a69fa98f3",
+      "training": "Existing 150-epoch 640-input YOLO11n training; no test-dev training."
+    },
+    "seed1": {
+      "selected_development_epoch": 103,
+      "weights_sha256": "99a6f2263087473a48147437f2f57c8f9c0c934f89744d77e99061ba02c88c27",
+      "training": "Existing 150-epoch 640-input YOLO11n training; no test-dev training."
+    },
+    "seed2": {
+      "selected_development_epoch": 114,
+      "weights_sha256": "15636cb841282eac605e8b2b97c469eed86b932717098abea2c6f8d4acddde3b",
+      "training": "Existing 150-epoch 640-input YOLO11n training; no test-dev training."
+    }
+  },
+  "inference": {
+    "candidate_policy": "single highest-scoring class per proposal (DetectionPredictor multi_label=False); differs from multi-label training validation",
+    "confidence": 0.001,
+    "detector_nms_iou": 0.7,
+    "merge_nms_iou": 0.7,
+    "max_detections": 1000,
+    "precision": "FP32",
+    "batch": 1,
+    "rectangular_padding": false,
+    "warmup_per_input_size": 5,
+    "method_order": "rotate by image index",
+    "methods": [
+      {
+        "name": "full_640",
+        "kind": "full",
+        "input_size": 640
+      },
+      {
+        "name": "full_960",
+        "kind": "full",
+        "input_size": 960
+      },
+      {
+        "name": "full_1280",
+        "kind": "full",
+        "input_size": 1280
+      },
+      {
+        "name": "fixed_slices_640_plus_global",
+        "kind": "fixed",
+        "input_size": 640,
+        "tile_size": 640,
+        "overlap": 0.2,
+        "global_pass": true
+      }
+    ],
+    "timing_boundary": "JPEG read/decode through CPU output predictions; includes view construction, model preprocessing/inference/postprocessing, device transfers and CPU tile merge; artifact writing and metric calculation excluded"
+  },
+  "window_and_geometry": {
+    "tile_stride_pixels": 512,
+    "window_order": "y starts then x starts; step floor(640*(1-0.2)); append final max(0,extent-640) start when absent; truncate window extent at image boundary.",
+    "projection": "Clip crop-local xyxy to crop dimensions, discard zero-area boxes, then add crop origin into original-image coordinates.",
+    "merge": "CPU torchvision class-aware batched_nms at IoU 0.7 followed by confidence-ordered cap 1000.",
+    "record_order": "Canonical source-image order; rotate method execution by image index. Saved prediction rows remain globally confidence sorted.",
+    "float_policy": "FP32 model inference; float32 boxes/IoUs for the pinned matcher; retained tie/order behaviour follows the recorded source/runtime."
+  },
+  "metric": {
+    "name": "Pinned converted ten-class pooled AP50-95",
+    "units": "percent; contrasts in AP percentage points",
+    "ultralytics": "8.3.253",
+    "iou_thresholds": [
+      0.5,
+      0.55,
+      0.6,
+      0.65,
+      0.7,
+      0.75,
+      0.8,
+      0.85,
+      0.9,
+      0.95
+    ],
+    "pooling": "Pool detections/GT by class over all images before pinned precision-recall/AP and class/IoU aggregation; not mean per-image AP.",
+    "native_ignore_masking": false,
+    "runtime": {
+      "python": "3.13.13",
+      "torch": "2.10.0+cu128",
+      "ultralytics": "8.3.253",
+      "numpy": "2.4.4",
+      "opencv": "4.13.0",
+      "torchvision": "0.25.0+cu128",
+      "cuda_runtime": "12.8"
+    },
+    "framework_source_sha256": {
+      "metrics": "4a9c8c1a7b91c309a8ac9a92754b0342ab95a469a07e3d57dcf3438b0fd96563",
+      "matching": "daba9d56de2107daee309abe2fb3db682345c2e1114bb6477554a0f7544cdf09",
+      "predictor": "49cb7e5309037b9e19995b53625d3e7ca831ff404e94f054b2be0da1d15df9e5",
+      "nms": "cefd6b3b3305e9653c29d938d55ccd7f51f510cb7fbd91dc6c315b8379a7376a",
+      "detection_validator": "f944eb546dc7b6eac71c063be8151e80edace5df57abf744ba679b2e23644957"
+    },
+    "executed_geometry_source_sha256": "d033d9af2507f08aaa8a92d8b8f0bb214fa2a98f8302c63d2b982c62835652a4",
+    "executed_scorer_source_sha256": "112e149c6e4ce4055dfb48e95a506b6ffa136a3e39d909d6f6a903a408759646",
+    "bundled_geometry_source_sha256": "16777b7ef26a2b109ff58bd86f1782155de9c0b944def2adb01c10ca6d895e4b",
+    "bundled_scorer_source_sha256": "c10f453967ab4a0f40a0675988c2095b301bc0d051a9cc58d2dd1fa1ca15cb8d",
+    "source_identity_note": "Executed and bundled source identities are separate; public licence headers and packaging can change bytes. No executable test-dev adapter is supplied."
+  },
+  "primary_contrasts": [
+    "full_1280 minus full_960 APpp for each checkpoint",
+    "full_1280 minus fixed_slices_640_plus_global APpp for each checkpoint",
+    "full four-setting AP table for each checkpoint"
+  ],
+  "frozen_choices": "No retraining, checkpoint reselection, confidence/NMS/resolution/tile tuning or learned selector on test-dev.",
+  "secondary_controls_executed_on_testdev": [],
+  "secondary_scope": "Development six-convention, native/publisher reference, current-matcher, size and label-budget controls are not test-dev results.",
+  "failure_policy": "Retain outcomes and failures; correct provenance/data issues before scoring; no favourable subset or threshold selection.",
+  "inference_adapter": {
+    "sha256": "8dd52706533625c9997609430798fcf8b993eff6d5a685d8629464ded1c89358",
+    "distribution_scope": "Execution identity only. This repository does not include the private test-dev adapter or a portable executable test-dev branch."
+  },
+  "uncertainty": "Descriptive same-checkpoint contrasts across different image splits; no population significance, scene-independent interval or causal attribution of score drop."
+}

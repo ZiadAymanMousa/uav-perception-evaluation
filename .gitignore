@@ -16,3 +16,6 @@ Ultralytics/
 **/test_artifacts/
 **/__pycache__/
 **/unit_controls.json
+/Preparation_Library/
+/University_Applications/
+/prep/

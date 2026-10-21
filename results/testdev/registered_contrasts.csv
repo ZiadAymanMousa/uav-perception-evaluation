@@ -1,0 +1,7 @@
+seed,contrast,APpp
+0,full_1280 minus full_960,0.6651035484656518
+0,full_1280 minus fixed_slices_640_plus_global,0.8943197687029034
+1,full_1280 minus full_960,0.5102675117378013
+1,full_1280 minus fixed_slices_640_plus_global,0.8946716545136937
+2,full_1280 minus full_960,0.8576246967521577
+2,full_1280 minus fixed_slices_640_plus_global,1.0866178140537528
