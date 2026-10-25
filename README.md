@@ -1,8 +1,8 @@
 # UAV vision: resolution, slicing and evaluation sensitivity
 
-By Ziad Ismail | Software release 0.5.0
+By Ziad Ismail | Software release 0.6.0
 
-I compare four established inference settings across three separately trained YOLO11n checkpoints on 548 VisDrone2019-DET development images (38,759 curated targets), followed by a frozen confirmation on all 1,610 official test-dev images (75,102 targets). The study asks how resolution, slicing, processing cost and scoring conventions affect the conclusions supported by the same saved detections. It introduces no new detector or slicing method.
+I compare four established inference settings across three separately trained YOLO11n checkpoints on 548 VisDrone2019-DET development images (38,759 curated targets), followed by a frozen primary-metric confirmation on all 1,610 official test-dev images (75,102 converted targets). The study asks how resolution, slicing, processing cost and scoring conventions affect the conclusions supported by the same saved detections. It introduces no new detector or slicing method.
 
 ## Development comparison
 
@@ -32,13 +32,23 @@ The same existing checkpoints and all four unchanged settings were evaluated wit
 | full_1280 | 19.260103 | 19.314283 | 19.485830 |
 | fixed_slices_640_plus_global | 18.365783 | 18.419611 | 18.399213 |
 
-Its registered advantage is 0.510–0.858 AP points over full 960 and 0.894–1.087 over slicing. Absolute full-1280 AP is 3.712–4.421 points below the same checkpoints on development. These are cross-split differences, not causal proof of overfitting or distribution shift. The development six-convention/reference/matcher controls were not repeated on test-dev.
+Its registered advantage is 0.510–0.858 AP points over full 960 and 0.894–1.087 over slicing. Absolute full-1280 AP is 3.712–4.421 points below the same checkpoints on development. These are cross-split differences, not causal proof of overfitting or distribution shift. The full six-convention development suite was not repeated on test-dev. A separate later post hoc check applies the captured legacy native-source policy to the retained test-dev detections; its scope and findings are reported below.
 
 ![Development and test-dev confirmation](figures/testdev_development_comparison.png)
 
 Solid lines: test-dev; dashed: development. Existing checkpoints are not independent scene samples; no significance intervals are implied. Public test-dev labels were held out from this study, not a blind challenge. Scene grouping, near-duplicate absence and pretraining exposure remain unknown.
 
 Read [complete confirmation results](TESTDEV_RESULTS.md), [protocol presentation](protocols/testdev_confirmation.json), [all twelve AP rows](results/testdev/ap_comparison.csv), [six contrasts](results/testdev/registered_contrasts.csv) and the [technical report](reports/Technical%20Report.pdf). The [portable test-dev component](testdev_execution/README.md) now supplies explicit preparation, inference and saved-output scoring interfaces. Its [validation record](testdev_execution/VALIDATION.md) separates complete real preparation and retained-log rescoring from a one-image CPU integration check. The later protocol presentation records the earlier internal plan; it is not external preregistration.
+
+## Post hoc native-policy test-dev check
+
+A separate check evaluated the same saved detections on all 1,610 images under the captured legacy VisDrone native-source policy. No detector inference, retraining, threshold tuning or checkpoint selection was repeated. Full 1280 remains highest for all three checkpoints, at 23.721–23.950% native AP. The close secondary comparison reverses: native scoring ranks 1280 > slicing > 960 > 640 for every checkpoint, whereas the primary converted metric ranks 1280 > 960 > slicing > 640.
+
+Full 1280 exceeds full 960 by 1.114–1.376 native AP points and slicing by 0.843–1.137 points. The smallest slicing-minus-960 margin is only 0.035791 points; these observed orderings are not significance claims. Native and converted AP have different definitions, so the change in absolute score is not a detector improvement or a causal estimate of ignore masking.
+
+All twelve full-split cells use the unchanged Python native-policy port. Before full scoring, the captured publisher MATLAB-language functions ran under GNU Octave 11.3.0 on the same three annotation-selected images for each checkpoint/setting: 36 real cases. Filtered arrays and all seven aggregate metrics passed the fixed numerical tolerances. This is bounded source agreement, not full-split publisher parity or an official challenge result. No score-zero target rows were present, so the third selection criterion used its declared fallback.
+
+Read the [complete native results](NATIVE_TESTDEV_RESULTS.md), [all seven metrics](results/testdev_native/metrics.csv), [per-class AP and weights](results/testdev_native/per_class_ap.json) and [post hoc protocol presentation](protocols/testdev_native_sensitivity.json). This branch adds aggregate evidence and figures; its native/reference execution pipeline is not distributed.
 
 ## Additional seed-0 development evidence
 
@@ -50,7 +60,7 @@ Two additional seed-0 inference sweeps reproduced every saved prediction exactly
 
 All three 150-epoch training runs completed, selecting epochs 95/103/114 on exposed validation. Failed seed-1 run b002 stopped at epoch 60 and is preserved as incomplete; its fresh replacement used unchanged seed-1 settings from the original pretrained weights. Three completed seeds do not make validation untouched or establish population significance. The separate frozen test-dev confirmation does not establish blind, scene-independent, field-safety or peer-reviewed performance.
 
-The legacy scoring port agrees with unchanged captured publisher functions under Octave 11.3.0 on all four seed-0 settings/all 548 images, including filtered arrays and seven metrics. Seeds 1 and 2 have ported scoring only; no exact-publisher/MATLAB equivalence is inferred for them. This is not an official challenge submission.
+On development data, the legacy scoring port agrees with unchanged captured publisher functions under Octave 11.3.0 on all four seed-0 settings and all 548 images, including filtered arrays and seven metrics. Full development reference execution was not repeated for seeds 1/2. The later test-dev branch has a separate 36-case source gate across all three checkpoints; its twelve full-split results come from the Python port. Neither check establishes exhaustive MATLAB-platform equivalence or an official challenge submission.
 
 This repository includes source, synthetic CPU controls, settings, aggregate JSON/CSV, separate development/test-dev rendering programs and explicit-input portable execution. No images, labels, raw detections, per-object records, weights, captured toolkit or executable native/current-matcher reference branch is bundled. Native/reference/current-matcher numerical controls remain **aggregate-only**. Test-dev execution source is supplied, with complete real preparation, 19,320 retained rows rescored and one-image CPU integration checked. Fresh installation, actual prospective training and a complete new portable inference sweep remain unverified.
 
@@ -74,7 +84,7 @@ The [label-budget diagnostic](label_budget/RESULTS.md) completes 100 frozen quer
 
 ![Retrospective label-budget results](results/label_budget/label_budget_summary.png)
 
-Root src/ contains preserved historical study adapters and aggregate renderers; use portable_execution/ for prospective training/development execution and testdev_execution/ for explicit test-dev preparation, inference and saved-output scoring. Label-budget source/controls and aggregates are supplied, while real full-grid historical-input orchestration and private prediction caches remain outside this release. Read the scoped commands before running workloads. The repository accompanies an empirical development study and frozen primary test-dev confirmation; the scientific results are not peer reviewed.
+Root src/ contains preserved historical study adapters and aggregate renderers; use portable_execution/ for prospective training/development execution and testdev_execution/ for explicit test-dev preparation, inference and saved-output scoring. Label-budget source/controls and aggregates are supplied, while real full-grid historical-input orchestration and private prediction caches remain outside this release. Read the scoped commands before running workloads. The repository accompanies an empirical development study, a frozen primary test-dev confirmation and a later post hoc native-policy sensitivity check. The scientific results are not peer reviewed.
 
 ## References
 

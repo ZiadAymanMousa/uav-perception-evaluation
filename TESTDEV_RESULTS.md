@@ -52,7 +52,7 @@ Each full-frame setting makes 1,610 passes per checkpoint. Slicing plus global m
 
 Test-dev labels are public but held out from this investigation's development decisions. The official split and byte disjointness do not establish a blind challenge, independent scenes, OOD performance or independent external validation. No population significance, calibrated uncertainty, annotation saving, learned-selector gain, robot integration or flight performance is established.
 
-Only primary pinned converted scoring was executed for this confirmation. The [six-convention development controls](RESULTS.md), seed-0 exact publisher-reference parity, two-seed current-matcher control, seed-0 size diagnostic and retrospective development label-budget result remain distinct. They are not test-dev controls by association. Any further test-dev exploration is exploratory and must not be retroactively folded into the frozen confirmation.
+Only primary pinned converted scoring was executed for this original confirmation. The [six-convention development controls](RESULTS.md), seed-0 full publisher-reference parity, two-seed current-matcher control, seed-0 size diagnostic and retrospective development label-budget result remain distinct. They are not test-dev controls by association. A [later post hoc native-policy check](NATIVE_TESTDEV_RESULTS.md) now evaluates the same retained test-dev detections under a second declared policy. It remains exploratory and is not retroactively folded into the frozen confirmation.
 
 This strengthens a bounded evaluation conclusion: the simple larger full-frame control remains stronger than the particular fixed slicing route tested. The result supplies no demonstrated need to add a learned selector to this four-setting split-level decision. A new method needs a meaningful decision endpoint/cost, a recoverable failure, strong simple alternatives and close prior-work analysis. No novel detector, universal resolution rule or publication-level originality is established.
 
@@ -65,3 +65,8 @@ The later [software validation](testdev_execution/VALIDATION.md) records complet
 `src/render_testdev_results.py` reconstructs the test-dev tables and figure from bundled aggregates or six hash-bound supplied summaries. It does not infer detections or recompute AP. [Reproduction scope](REPRODUCING.md) separates this presentation layer, saved-output scoring and new inference.
 
 Prior methods and software: [VisDrone dataset](https://github.com/VisDrone/VisDrone-Dataset), [Ultralytics 8.3.253](https://github.com/ultralytics/ultralytics/tree/v8.3.253), [SAHI](https://arxiv.org/abs/2202.06934). Licence and source credits remain in [notices](THIRD_PARTY_NOTICES.md).
+
+
+## Later native-policy check
+
+The [separate native result](NATIVE_TESTDEV_RESULTS.md) retains full 1280 as the highest-AP setting for all three checkpoints but reverses the closer slicing/960 order relative to the primary metric. All twelve native full-split cells use the Python port, with a separate 36-case publisher-function gate under Octave. Native and converted AP definitions differ; their absolute difference is not a detector gain. Version 0.6 adds these aggregate findings, figures and the updated technical report. The original primary exports and execution component remain unchanged.

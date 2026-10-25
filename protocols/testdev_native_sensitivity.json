@@ -1,0 +1,54 @@
+{
+  "title": "Post hoc native-policy sensitivity on retained test-dev predictions",
+  "presentation": "Later sanitised presentation of internally frozen scope, not external preregistration",
+  "original_protocol_sha256": "4d0fce20a9cd55e840b496667ea95de6798515ea1564e85b4fa6fb76f81b8a6e",
+  "original_frozen_utc": "2026-10-22T15:41:17.122453+00:00",
+  "prior_knowledge": "Primary converted test-dev and native development results already known",
+  "methods": [
+    "full_640",
+    "full_960",
+    "full_1280",
+    "fixed_slices_640_plus_global"
+  ],
+  "checkpoints": 3,
+  "images_per_cell": 1610,
+  "retained_records": 19320,
+  "new_inference_or_training": false,
+  "new_tuning_or_checkpoint_selection": false,
+  "gate_selection": [
+    {
+      "image": "0000006_00611_d_0000002.jpg",
+      "criterion": "lex-first without category0"
+    },
+    {
+      "image": "9999938_00000_d_0000208.jpg",
+      "criterion": "most category0 rows, lex ties",
+      "rows": 52,
+      "zero_count_fallback": false
+    },
+    {
+      "image": "0000006_00159_d_0000001.jpg",
+      "criterion": "most ignored_target rows, lex ties",
+      "rows": 0,
+      "zero_count_fallback": true
+    }
+  ],
+  "gate_cases": 36,
+  "source_gate_timeout_seconds": 3600,
+  "source_runtime": "GNU Octave11.3.0",
+  "gate_tolerances": {
+    "filtered_absolute": 1e-10,
+    "relative": 0,
+    "metrics_percentage_points": 1e-08
+  },
+  "full_endpoint": "All12completePythonportcells/all7metrics/perclassAPandweights; fixed1280minus960andslicingcontrasts; allordersreported",
+  "policy": "Captured legacy VisDrone source:category0unionmask/globalcapbeforeclass/classimageweights/continuousprecisionenvelopeAP; notgenericCOCO",
+  "scope_limits": [
+    "Posthoc rather than blind",
+    "Three gate images are purposeful not representative",
+    "No score0targetrowcaseavailable;thirdcriterionfallback",
+    "FullsplitPythonport, notfullsplitpublisherfunctionexecution",
+    "Native-minus-converted is metric-definition difference, not detector improvement",
+    "No significance,sceneindependence,flightperformance,annotation-saving or novelty claim"
+  ]
+}

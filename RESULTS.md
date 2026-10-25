@@ -1,10 +1,10 @@
 # Result definitions and numerical exports
 
-By Ziad Ismail | Version 0.5.0
+By Ziad Ismail | Version 0.6.0
 
-The score conventions, reference/matcher and size controls below concern exposed development data. The separate [completed test-dev confirmation](TESTDEV_RESULTS.md) uses only the primary pinned converted metric. No six-convention test-dev extension is implied.
+The score conventions, reference/matcher and size controls below concern exposed development data. The original [test-dev confirmation](TESTDEV_RESULTS.md) uses the primary pinned converted metric. The later [native-policy check](NATIVE_TESTDEV_RESULTS.md) is a separate post hoc evaluation of the retained test-dev detections. It does not extend the full six-convention development suite by association.
 
-[aggregate_results.json](results/aggregate_results.json) contains the three-seed/four-setting/six-convention score cube: 72 AP values and 18 within-model convention comparisons. [Protocol CSV](results/three_seed_protocol_scores.csv) gives the same values in long form. Score units are percent; differences use percentage points (pp). All contrasts below mean **fixed slices plus global minus full 960**.
+[aggregate_results.json](results/aggregate_results.json) contains the three-seed/four-setting/six-convention score cube: 72 AP values and 18 within-model convention comparisons. [Protocol CSV](results/three_seed_protocol_scores.csv) gives the same values in long form. Score units are percent; differences use percentage points (pp). Contrasts in the development tables below mean **fixed slices plus global minus full 960**. The later native test-dev section defines its own contrasts.
 
 | Convention | Seed 0 difference (pp) | Seed 1 difference (pp) | Seed 2 difference (pp) |
 |---|---:|---:|---:|
@@ -48,3 +48,12 @@ The [complete diagnostic](label_budget/RESULTS.md) and [18 model/budget aggregat
 [diagnostic_costs.csv](results/testdev/diagnostic_costs.csv) supplies all twelve pass/pixel/median/p95 rows. Slicing uses 11,448 passes per checkpoint versus 1,610 for each full setting; input pixels are 7.110559 times full 640, or 1.777640 times full 1280. Different image dimensions mean the development slicing ratio does not transfer unchanged. Timing is one desktop sweep with substantial drift, not stable/onboard latency or energy.
 
 The [data](results/testdev/data_integrity_summary.json), [validation](results/testdev/validation_summary.json) and [protocol](protocols/testdev_confirmation.json) summaries distinguish all-run checks from public executable scope. See the [complete report](TESTDEV_RESULTS.md) for every primary value, known limits and confirmation/exploration boundary. The separate test-dev renderer reconstructs the tables and figure without AP recomputation. The [portable test-dev component](testdev_execution/README.md) supplies execution interfaces; [its validation](testdev_execution/VALIDATION.md) records complete preparation, same-pinned-scorer retained-log parity and one-image CPU integration, with full new inference and actual prospective training still unverified. No scientific values change in version 0.5.0.
+
+
+## Test-dev native numerical exports
+
+[All native metrics](results/testdev_native/metrics.csv) contain twelve complete cells with AP, AP50, AP75, AR1, AR10, AR100 and AR500 in percent. [Per-class AP and weights](results/testdev_native/per_class_ap.json) retain all ten category outputs and the source class-image counts. These counts weight the aggregate; they are not object counts or a uniform class average.
+
+Native AP for full 1280 is 23.772046/23.721115/23.949571% for checkpoints 0/1/2. Full-1280-minus-960 contrasts are 1.318419/1.113775/1.376281 percentage points; full-1280-minus-slicing contrasts are 0.843096/1.077985/1.137123 points. All are positive. Native ranks 1280 > slicing > 960 > 640 in each checkpoint; primary converted scoring ranks 1280 > 960 > slicing > 640. The slicing-minus-960 differences are 0.475323/0.035791/0.239158 points.
+
+[Validation summary](results/testdev_native/validation_summary.json) separates the 36-case publisher-function gate from twelve full-split Python-port evaluations. [The complete account](NATIVE_TESTDEV_RESULTS.md) explains the source policy, declared fallback, post hoc design and limits. These values are not generic COCO AP or official challenge scores, and cannot be subtracted from converted AP as a detector improvement. Original converted exports remain unchanged.

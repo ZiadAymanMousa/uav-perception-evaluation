@@ -36,3 +36,8 @@ The new original adapters retain AGPL-3.0-only and upstream rights. The selectio
 The original test-dev execution adapters, synthetic controls and aggregate renderer retain AGPL-3.0-only, copyright 2026 Ziad Ismail, and existing upstream rights. The new component imports the unchanged study-owned conversion, geometry, training-context and converted-score modules from portable_execution/src; their source notices remain intact. Its inference and scoring call the separately installed Ultralytics framework and dependencies under their applicable licences. No captured framework/native/current-matcher source, runtime binary or model weight is newly redistributed.
 
 The release-time task configuration contains content/checkpoint/source identities, class names and fixed numerical settings. Those hashes grant no rights over the independently obtained VisDrone inputs or checkpoints. Original data, converted labels, exclusion records and raw predictions remain unbundled. Tables and figures are rendered from aggregate evidence; reconstruction is not an official challenge evaluation.
+
+
+## Version 0.6 native-policy numerical evidence
+
+This update adds study aggregates and figures for the separate post hoc native-policy test-dev check. The VisDrone toolkit source, source-mirroring port, execution wrappers and raw reference inputs remain unbundled. Existing toolkit redistribution limitations and upstream rights are unchanged. Aggregate evidence grants no rights over the source code, data, model weights or runtime dependencies. No new native-scoring implementation or dependency binary is included.

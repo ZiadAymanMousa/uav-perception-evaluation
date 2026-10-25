@@ -1,4 +1,4 @@
-# Reproduction in version 0.5
+# Reproduction in version 0.6
 
 Use [portable_execution/README.md](portable_execution/README.md) for prospective training/development execution and [testdev_execution/README.md](testdev_execution/README.md) for explicit test-dev preparation, inference and retained-output scoring. [PORTABLE_VALIDATION.md](PORTABLE_VALIDATION.md) and the [test-dev validation record](testdev_execution/VALIDATION.md) separate actual checked scopes. The historical manifest-bound code remains in root src/ to preserve the original source. The separately versioned adapter does not relabel existing weights as trained on fresh data. Clean installation, full prospective retraining and complete public reproduction remain unverified.
 
@@ -64,4 +64,13 @@ python -B src/render_testdev_results.py --input-dir results/testdev --output-dir
 
 The renderer requires a new output directory. For supplied summaries, `--summary-index` replaces `--input-dir`; the index names three seed pairs with explicit development/test-dev paths and SHA256 values. Paths resolve relative to the index. No retained raw prediction log, data, labels, weights, full private audit/orchestrator or captured native/current-matcher branch is distributed. The standalone source and data-dependent commands do not make those inputs available by association.
 
-The actual retained test-dev study remains the earlier all-image, three-checkpoint primary comparison. Its development native/reference/matcher controls do not extend to test-dev. Same-algorithm rescoring checks continuity, not evaluator independence, scene-independent generalisation, deployment timing or cross-hardware determinism. See [the execution validation](testdev_execution/VALIDATION.md) and [original confirmation validation summary](results/testdev/validation_summary.json) for the separate scopes.
+The original frozen test-dev confirmation is the earlier all-image, three-checkpoint primary comparison. Its development native/reference/matcher controls do not extend to test-dev by association; the later native-policy test-dev result has its own declared protocol and bounded source gate. Same-algorithm rescoring checks continuity, not evaluator independence, scene-independent generalisation, deployment timing or cross-hardware determinism. See [the execution validation](testdev_execution/VALIDATION.md) and [original confirmation validation summary](results/testdev/validation_summary.json) for the separate scopes.
+
+
+## Version 0.6 native-policy aggregates
+
+The [post hoc native check](NATIVE_TESTDEV_RESULTS.md) adds all twelve seven-metric rows, per-class AP and class-image weights, protocol/validation presentations and static figures. Existing scientific code, configs, tests and converted result exports are unchanged. The public testdev_execution component continues to implement its documented converted scorer; it does not acquire native scoring because native aggregates are included.
+
+The native scorer, captured toolkit execution wrappers and original reference inputs are not supplied. Inspecting the new CSV/JSON and replotting its aggregates can check presentation and weighted arithmetic, but cannot recompute detector AP without the original predictions, annotations and evaluator. No new native command, clean installation, full inference sweep or prospective training is claimed.
+
+The reference gate compares captured publisher MATLAB-language functions under Octave 11.3.0 on three annotation-selected images for every checkpoint/setting, before twelve full-split Python-port evaluations. This is 36 purposeful cases, not all 1,610 images through the publisher functions. The score-zero-target selection criterion used its fixed fallback. The [validation summary](results/testdev_native/validation_summary.json) gives tolerances and actual agreement; there is no official challenge or exhaustive MATLAB-platform equivalence claim.

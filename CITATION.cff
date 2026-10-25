@@ -4,7 +4,6 @@ title: "UAV Vision: Resolution, Slicing and Evaluation Sensitivity"
 authors:
   - family-names: Ismail
     given-names: Ziad
-version: "0.5.0"
-date-released: 2026-10-21
+version: "0.6.0"
 license: AGPL-3.0-only
 type: software
