@@ -1,0 +1,102 @@
+{
+  "schema": 1,
+  "selection": "Selected after the earlier image audit; fixed before the historical geometry extraction. Shared endpoint retained; not representative sampling.",
+  "cases": [
+    {
+      "case_id": "T_R025",
+      "role": "posthoc_target",
+      "left": "train/images/0000165_04125_d_0000104.jpg",
+      "right": "val/images/0000165_04325_d_0000105.jpg",
+      "transform": null,
+      "left_sha256": "2e8441c503f59f64007a0f60adf4f3b84841f5f9e1cd6bdf826ab089874b8d1f",
+      "right_sha256": "2c2847bfcf1624c762caab4274355de751e0958efe54020b0ca6bd8fd4cd7a8e"
+    },
+    {
+      "case_id": "T_R052",
+      "role": "posthoc_target",
+      "left": "val/images/0000356_02941_d_0000644.jpg",
+      "right": "testdev/images/0000299_00000_d_0000088.jpg",
+      "transform": null,
+      "left_sha256": "240fceb24ca3c89d6025e48f67906389ef2cd416dfa944cfdce34e4b0bda19d3",
+      "right_sha256": "7fd7ac5f49cfff47a9bb875a9f5d68c0d2e838e3934331779adec6d38e6f0994"
+    },
+    {
+      "case_id": "T_R079",
+      "role": "posthoc_target",
+      "left": "train/images/0000323_02401_d_0000644.jpg",
+      "right": "val/images/0000323_02601_d_0000645.jpg",
+      "transform": null,
+      "left_sha256": "2712010c18eaf9a36d3417e74e034eed47ad96fc2967bafc5f45bda42600bf6d",
+      "right_sha256": "781b10b7b38a510c7c255e17d5595b1a09d297881564eaadced7aa3f5ddefca3"
+    },
+    {
+      "case_id": "T_R106",
+      "role": "posthoc_target",
+      "left": "train/images/0000323_01801_d_0000641.jpg",
+      "right": "val/images/0000323_02601_d_0000645.jpg",
+      "transform": null,
+      "left_sha256": "f405f4442bf356ccdbf37c2fb65043abdabda0facf89e5b66deec73824b56e53",
+      "right_sha256": "781b10b7b38a510c7c255e17d5595b1a09d297881564eaadced7aa3f5ddefca3"
+    },
+    {
+      "case_id": "C_BYTE",
+      "role": "known_exact_byte_control",
+      "left": "train/images/0000239_06450_d_0000017.jpg",
+      "right": "train/images/0000239_06950_d_0000018.jpg",
+      "transform": null,
+      "left_sha256": "382de736b27ad4b54466c5c65cec1bbe5d369a8a735605b5ba68fcf285c28067",
+      "right_sha256": "382de736b27ad4b54466c5c65cec1bbe5d369a8a735605b5ba68fcf285c28067"
+    },
+    {
+      "case_id": "C_SCALE_CROP",
+      "role": "known_transform_control",
+      "left": "train/images/0000002_00005_d_0000014.jpg",
+      "right": "generated:scale_crop",
+      "transform": "scale_crop",
+      "left_sha256": "17532f304f390479d8b7998863af7d2c51549702977c1e76b82ed8700dea7085"
+    },
+    {
+      "case_id": "C_ROTATION",
+      "role": "known_transform_control",
+      "left": "train/images/0000002_00005_d_0000014.jpg",
+      "right": "generated:rotation",
+      "transform": "rotation",
+      "left_sha256": "17532f304f390479d8b7998863af7d2c51549702977c1e76b82ed8700dea7085"
+    },
+    {
+      "case_id": "C_PERSPECTIVE",
+      "role": "known_transform_control",
+      "left": "train/images/0000002_00005_d_0000014.jpg",
+      "right": "generated:perspective",
+      "transform": "perspective",
+      "left_sha256": "17532f304f390479d8b7998863af7d2c51549702977c1e76b82ed8700dea7085"
+    },
+    {
+      "case_id": "N_R084",
+      "role": "visually_different_natural_control_not_verified_geography",
+      "left": "val/images/0000287_01001_d_0000764.jpg",
+      "right": "testdev/images/9999938_00000_d_0000119.jpg",
+      "transform": null,
+      "left_sha256": "a643b322b7ec663cde1623bf362914b11e48275719f00cf8ae3d7ab281978721",
+      "right_sha256": "7fd373baf7e09196fb9308d1977ba984cc9f36d23c9a9387a0cb4d5c2dabb37f"
+    },
+    {
+      "case_id": "N_R061",
+      "role": "visually_different_natural_control_not_verified_geography",
+      "left": "testdev/images/0000120_02946_d_0000098.jpg",
+      "right": "testdev/images/9999979_00000_d_0000031.jpg",
+      "transform": null,
+      "left_sha256": "bb8c1d28d3859422e3aa9fbe133e17d45ed65728cb5cd170969d96874670a599",
+      "right_sha256": "f2e94bab28abe3349c9e22890e05ce6ee0de9c99dd9310903cfc47c73d912423"
+    },
+    {
+      "case_id": "N_R050",
+      "role": "visually_different_natural_control_not_verified_geography",
+      "left": "val/images/0000359_01961_d_0000707.jpg",
+      "right": "testdev/images/9999938_00000_d_0000464.jpg",
+      "transform": null,
+      "left_sha256": "0efd6dea96ed26fc36fd4b3a469ceb0d4aa8ceaf1336be7fc34223e529940cd0",
+      "right_sha256": "17f0c734dad0e2d7e7e8fbe14fa35b3706589cafd2d5c9b70b86cc2b394780df"
+    }
+  ]
+}
